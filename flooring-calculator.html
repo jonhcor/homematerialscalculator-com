@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flooring Calculator — Square Footage &amp; Boxes Needed | HomeMaterialsCalculator.com</title>
+<meta name="description" content="Free flooring calculator. Enter your room dimensions to instantly calculate square footage, waste-adjusted coverage, and how many boxes of flooring you need.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6197205248872945" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--charcoal:#1c1917;--amber:#f59e0b;--amber-dk:#92400e;--amber-lt:#fffbeb;--amber-border:#fde68a;--bg:#fafaf9;--card:#fff;--text:#1c1917;--muted:#78716c;--stone:#f5f5f4;--border:#e7e5e4;--radius:12px;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-header{background:var(--charcoal);padding:0 20px}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.site-name{color:#fff;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;padding:16px 0;white-space:nowrap}
+.site-name span{color:var(--amber)}
+.tool-nav{display:flex;gap:2px;flex-wrap:wrap;padding:8px 0}
+.tool-nav a{color:rgba(255,255,255,.5);font-size:13px;font-weight:600;padding:7px 13px;border-radius:6px;transition:all .15s;white-space:nowrap}
+.tool-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.tool-nav a.active{color:#451a03;background:var(--amber)}
+.main{max-width:960px;margin:0 auto;padding:32px 16px 60px}
+.page-hero{margin-bottom:24px}
+.page-hero h1{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:var(--text);line-height:1.1;margin-bottom:6px;letter-spacing:.3px}
+.page-hero p{color:var(--muted);font-size:15px}
+.card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px;margin-bottom:20px;border-top:3px solid var(--amber)}
+.section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px}
+.input-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:13px;font-weight:600;color:var(--text)}
+.field .hint{font-size:11px;color:var(--muted);margin-top:-3px}
+.field input,.field select{padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .15s;background:#fff;-webkit-appearance:none;appearance:none}
+.field input:focus,.field select:focus{border-color:var(--amber)}
+.waste-display{display:flex;align-items:center;gap:10px;margin-top:18px;padding:12px 14px;background:var(--stone);border-radius:8px;border:1px solid var(--border)}
+.waste-display span{font-size:13px;color:var(--muted)}
+.waste-display strong{font-size:14px;color:var(--amber-dk);font-weight:600}
+.results-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:24px 0 12px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.res{background:var(--stone);border-radius:10px;padding:14px 16px;border:1px solid var(--border)}
+.res.primary{background:var(--amber-lt);border-color:var(--amber-border)}
+.res-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.res-val{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:var(--text);line-height:1}
+.res.primary .res-val{color:var(--amber-dk)}
+.res-unit{font-size:11px;color:var(--muted);margin-top:3px}
+.divider{height:1px;background:var(--border);margin:24px 0}
+.info-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px;margin-bottom:20px}
+.info-card h2{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:.2px}
+.info-card h3{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;margin:20px 0 8px;letter-spacing:.2px}
+.info-card p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+.coverage-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.coverage-table th{text-align:left;padding:8px 12px;background:var(--stone);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.coverage-table td{padding:8px 12px;border-top:1px solid var(--border);color:var(--text)}
+.coverage-table tr:hover td{background:var(--stone)}
+.faq-item{margin-bottom:16px}
+.faq-item dt{font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px}
+.faq-item dd{font-size:14px;color:var(--muted);line-height:1.75}
+footer{max-width:960px;margin:0 auto;padding:24px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer p{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:var(--muted);transition:color .15s}
+.footer-links a:hover{color:var(--amber-dk)}
+@media(max-width:600px){.page-hero h1{font-size:28px}.res-val{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-name">Home<span>Materials</span>Calculator</a>
+    <nav class="tool-nav" aria-label="Tools">
+      <a href="index.html">Home</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="mulch-calculator.html">Mulch</a>
+      <a href="gravel-calculator.html">Gravel</a>
+      <a href="topsoil-calculator.html">Topsoil</a>
+      <a href="lumber-calculator.html">Lumber</a>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html" class="active">Flooring</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="page-hero">
+    <h1>Flooring Calculator</h1>
+    <p>Enter your room dimensions and flooring type to calculate square footage, waste-adjusted coverage, and boxes needed.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label">Room dimensions</div>
+    <div class="input-grid">
+      <div class="field">
+        <label for="room-length">Length (ft)</label>
+        <input type="number" id="room-length" class="calc-input" min="0" step="any" value="12">
+      </div>
+      <div class="field">
+        <label for="room-width">Width (ft)</label>
+        <input type="number" id="room-width" class="calc-input" min="0" step="any" value="14">
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-label">Material &amp; layout</div>
+    <div class="input-grid">
+      <div class="field">
+        <label for="material">Material &amp; layout</label>
+        <span class="hint">Sets recommended waste %</span>
+        <select id="material" onchange="onMaterialChange()">
+          <option value="10">Hardwood — straight lay (10%)</option>
+          <option value="10">LVP / Laminate — straight lay (10%)</option>
+          <option value="15">Hardwood / LVP — diagonal lay (15%)</option>
+          <option value="10" selected>Tile — straight lay (10%)</option>
+          <option value="15">Tile — offset / brick pattern (15%)</option>
+          <option value="20">Tile — diagonal lay (20%)</option>
+          <option value="20">Tile — herringbone (20%)</option>
+          <option value="10">Carpet (10%)</option>
+          <option value="0">Custom waste % below</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="waste-pct">Waste %</label>
+        <span class="hint">Auto-set by material above</span>
+        <input type="number" id="waste-pct" class="calc-input" min="0" max="50" step="1" value="10">
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-label">Box size (optional)</div>
+    <div class="input-grid">
+      <div class="field">
+        <label for="box-sqft">Coverage per box (sq ft)</label>
+        <span class="hint">Listed on the box label</span>
+        <input type="number" id="box-sqft" class="calc-input" min="0" step="any" placeholder="e.g. 20">
+      </div>
+    </div>
+
+    <div class="results-label">Results</div>
+    <div class="results-grid">
+      <div class="res primary">
+        <div class="res-label">Sq Ft Needed</div>
+        <div class="res-val" id="res-sqft">—</div>
+        <div class="res-unit">with waste included</div>
+      </div>
+      <div class="res">
+        <div class="res-label">Room Size</div>
+        <div class="res-val" id="res-room">—</div>
+        <div class="res-unit">sq ft (exact)</div>
+      </div>
+      <div class="res">
+        <div class="res-label">Waste Added</div>
+        <div class="res-val" id="res-waste">—</div>
+        <div class="res-unit">sq ft buffer</div>
+      </div>
+      <div class="res" id="res-boxes-card">
+        <div class="res-label">Boxes Needed</div>
+        <div class="res-val" id="res-boxes">—</div>
+        <div class="res-unit">enter box size above</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>How to Calculate Flooring</h2>
+    <p>Multiply the room length by the width to get square footage. Then add a waste factor to account for cuts, pattern matching, and damaged pieces. Always buy a little more than you need — flooring from different production batches can vary slightly in color and texture.</p>
+    <p><strong>Formula:</strong> Sq Ft Needed = (Length &times; Width) &times; (1 + Waste % &divide; 100). &nbsp; Boxes = &lceil;Sq Ft Needed &divide; Coverage per Box&rceil;.</p>
+
+    <h3>Recommended Waste by Material &amp; Layout</h3>
+    <table class="coverage-table">
+      <thead><tr><th>Material / Layout</th><th>Waste %</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Hardwood or LVP — straight</td><td>10%</td><td>Minimal cuts, simple pattern</td></tr>
+        <tr><td>Hardwood or LVP — diagonal</td><td>15%</td><td>More angled cuts at walls</td></tr>
+        <tr><td>Tile — straight lay</td><td>10%</td><td>Standard grid layout</td></tr>
+        <tr><td>Tile — offset / brick</td><td>15%</td><td>Half-cuts along edges</td></tr>
+        <tr><td>Tile — diagonal</td><td>20%</td><td>Significant corner waste</td></tr>
+        <tr><td>Tile — herringbone</td><td>20%</td><td>Complex pattern, high cut rate</td></tr>
+        <tr><td>Carpet</td><td>10%</td><td>Roll width may not match room</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Frequently Asked Questions</h3>
+    <dl>
+      <div class="faq-item">
+        <dt>How many square feet of flooring do I need for a 12×14 room?</dt>
+        <dd>A 12×14 room is 168 square feet. With a standard 10% waste factor, you would need 185 square feet of flooring. For a diagonal tile or herringbone layout, add 20% and buy 202 square feet.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>Why does layout pattern affect how much flooring I need?</dt>
+        <dd>Diagonal and herringbone layouts require more angled cuts, especially along the perimeter of the room. Those cut-off pieces often can't be reused, so more material ends up as waste compared to a straight lay.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>Should I buy extra flooring beyond the waste factor?</dt>
+        <dd>Yes — buy one extra box if your budget allows and save it. If a plank or tile gets damaged in the future, matching your exact flooring from the same production run is often impossible. Having spares saves a headache.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>How do I find the square footage per box?</dt>
+        <dd>It is printed on the side of every flooring box, usually labeled as "Coverage" or "Area." Common ranges are 15–25 sq ft for tile boxes and 18–30 sq ft for hardwood and LVP planks.</dd>
+      </div>
+    </dl>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 HomeMaterialsCalculator.com</p>
+  <div class="footer-links">
+    <a href="concrete-calculator.html">Concrete</a>
+    <a href="mulch-calculator.html">Mulch</a>
+    <a href="gravel-calculator.html">Gravel</a>
+    <a href="topsoil-calculator.html">Topsoil</a>
+    <a href="lumber-calculator.html">Lumber</a>
+    <a href="paint-calculator.html">Paint</a>
+    <a href="flooring-calculator.html">Flooring</a>
+  </div>
+</footer>
+
+<script>
+function v(id){ return parseFloat(document.getElementById(id).value) || 0; }
+function fmt(n){ return n <= 0 ? '—' : (n % 1 === 0 ? n.toString() : n.toFixed(1)); }
+
+function onMaterialChange() {
+  var sel = document.getElementById('material');
+  var pct = sel.value;
+  if (pct !== '0') {
+    document.getElementById('waste-pct').value = pct;
+  }
+  calculate();
+}
+
+function calculate() {
+  var l = v('room-length');
+  var w = v('room-width');
+  var wastePct = v('waste-pct');
+  var boxSqft = v('box-sqft');
+
+  var roomSqft = l * w;
+  var withWaste = roomSqft * (1 + wastePct / 100);
+  var wasteAdded = withWaste - roomSqft;
+  var boxes = (boxSqft > 0 && withWaste > 0) ? Math.ceil(withWaste / boxSqft) : 0;
+
+  document.getElementById('res-room').textContent  = fmt(roomSqft);
+  document.getElementById('res-sqft').textContent  = fmt(withWaste);
+  document.getElementById('res-waste').textContent = fmt(wasteAdded);
+  document.getElementById('res-boxes').textContent = boxes > 0 ? boxes : '—';
+  document.getElementById('res-boxes-card').querySelector('.res-unit').textContent =
+    boxSqft > 0 ? 'boxes to buy' : 'enter box size above';
+}
+
+document.querySelectorAll('.calc-input').forEach(function(el){ el.addEventListener('input', calculate); });
+document.getElementById('material').addEventListener('change', onMaterialChange);
+calculate();
+</script>
+</body>
+</html>
