@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concrete Calculator — Cubic Yards, Bags &amp; Cubic Feet | HomeMaterialsCalculator.com</title>
+<meta name="description" content="Free concrete calculator. Enter your dimensions to instantly find cubic yards, cubic feet, and how many 40lb, 60lb, or 80lb bags you need for slabs, columns, and walls.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6197205248872945" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1c1917;--amber:#f59e0b;--amber-dk:#92400e;--amber-lt:#fffbeb;--amber-border:#fde68a;
+  --bg:#fafaf9;--card:#fff;--text:#1c1917;--muted:#78716c;--stone:#f5f5f4;--border:#e7e5e4;--radius:12px;
+}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-header{background:var(--charcoal);padding:0 20px}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.site-name{color:#fff;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;padding:16px 0;white-space:nowrap}
+.site-name span{color:var(--amber)}
+.tool-nav{display:flex;gap:2px;flex-wrap:wrap;padding:8px 0}
+.tool-nav a{color:rgba(255,255,255,.5);font-size:13px;font-weight:600;padding:7px 13px;border-radius:6px;transition:all .15s;white-space:nowrap}
+.tool-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.tool-nav a.active{color:#451a03;background:var(--amber)}
+.main{max-width:960px;margin:0 auto;padding:32px 16px 60px}
+.page-hero{margin-bottom:24px}
+.page-hero h1{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:var(--text);line-height:1.1;margin-bottom:6px;letter-spacing:.3px}
+.page-hero p{color:var(--muted);font-size:15px}
+.card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px;margin-bottom:20px;border-top:3px solid var(--amber)}
+.section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px}
+.type-toggle{display:flex;gap:8px;margin-bottom:28px}
+.type-btn{flex:1;padding:10px 8px;border:1.5px solid var(--border);border-radius:8px;background:transparent;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s}
+.type-btn:hover{border-color:var(--amber);color:var(--amber-dk)}
+.type-btn.active{border-color:var(--amber);background:var(--amber-lt);color:var(--amber-dk)}
+.input-section{display:none}
+.input-section.visible{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:13px;font-weight:600;color:var(--text)}
+.field .hint{font-size:11px;color:var(--muted);margin-top:-3px}
+.field input{padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .15s;background:#fff}
+.field input:focus{border-color:var(--amber)}
+.waste-row{display:flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;color:var(--muted);cursor:pointer}
+.waste-row input{width:16px;height:16px;accent-color:var(--amber);cursor:pointer;flex-shrink:0}
+.results-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:24px 0 12px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.res{background:var(--stone);border-radius:10px;padding:14px 16px;border:1px solid var(--border)}
+.res.primary{background:var(--amber-lt);border-color:var(--amber-border)}
+.res-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.res-val{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:var(--text);line-height:1}
+.res.primary .res-val{color:var(--amber-dk)}
+.res-unit{font-size:11px;color:var(--muted);margin-top:3px}
+.info-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px;margin-bottom:20px}
+.info-card h2{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:.2px}
+.info-card h3{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;margin:20px 0 8px;letter-spacing:.2px}
+.info-card p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+.coverage-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.coverage-table th{text-align:left;padding:8px 12px;background:var(--stone);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.coverage-table td{padding:8px 12px;border-top:1px solid var(--border);color:var(--text)}
+.coverage-table tr:hover td{background:var(--stone)}
+.faq-item{margin-bottom:16px}
+.faq-item dt{font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px}
+.faq-item dd{font-size:14px;color:var(--muted);line-height:1.75}
+footer{max-width:960px;margin:0 auto;padding:24px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer p{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:var(--muted);transition:color .15s}
+.footer-links a:hover{color:var(--amber-dk)}
+@media(max-width:600px){.page-hero h1{font-size:28px}.type-btn{font-size:13px;padding:8px 4px}.res-val{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-name">Home<span>Materials</span>Calculator</a>
+    <nav class="tool-nav" aria-label="Tools">
+      <a href="index.html">Home</a>
+      <a href="concrete-calculator.html" class="active">Concrete</a>
+      <a href="mulch-calculator.html">Mulch</a>
+      <a href="gravel-calculator.html">Gravel</a>
+      <a href="topsoil-calculator.html">Topsoil</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="page-hero">
+    <h1>Concrete Calculator</h1>
+    <p>Enter your project dimensions to instantly calculate cubic yards, cubic feet, and bags needed — for slabs, columns, and walls.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label">Project type</div>
+    <div class="type-toggle" role="group" aria-label="Project type">
+      <button class="type-btn active" data-type="slab" onclick="setType('slab')">Slab</button>
+      <button class="type-btn" data-type="column" onclick="setType('column')">Column</button>
+      <button class="type-btn" data-type="wall" onclick="setType('wall')">Wall / Footer</button>
+    </div>
+
+    <div id="inputs-slab" class="input-section visible">
+      <div class="field">
+        <label for="slab-length">Length (ft)</label>
+        <input type="number" id="slab-length" class="calc-input" min="0" step="any" value="12">
+      </div>
+      <div class="field">
+        <label for="slab-width">Width (ft)</label>
+        <input type="number" id="slab-width" class="calc-input" min="0" step="any" value="10">
+      </div>
+      <div class="field">
+        <label for="slab-thickness">Thickness (in)</label>
+        <span class="hint">4&Prime; is standard for driveways</span>
+        <input type="number" id="slab-thickness" class="calc-input" min="0" step="any" value="4">
+      </div>
+    </div>
+
+    <div id="inputs-column" class="input-section">
+      <div class="field">
+        <label for="col-diameter">Diameter (in)</label>
+        <input type="number" id="col-diameter" class="calc-input" min="0" step="any" value="10">
+      </div>
+      <div class="field">
+        <label for="col-height">Height / Depth (ft)</label>
+        <input type="number" id="col-height" class="calc-input" min="0" step="any" value="3.5">
+      </div>
+      <div class="field">
+        <label for="col-count">Number of columns</label>
+        <input type="number" id="col-count" class="calc-input" min="0" step="1" value="4">
+      </div>
+    </div>
+
+    <div id="inputs-wall" class="input-section">
+      <div class="field">
+        <label for="wall-length">Length (ft)</label>
+        <input type="number" id="wall-length" class="calc-input" min="0" step="any" value="20">
+      </div>
+      <div class="field">
+        <label for="wall-height">Height (ft)</label>
+        <input type="number" id="wall-height" class="calc-input" min="0" step="any" value="4">
+      </div>
+      <div class="field">
+        <label for="wall-thickness">Thickness (in)</label>
+        <span class="hint">8&Prime; is common for foundation walls</span>
+        <input type="number" id="wall-thickness" class="calc-input" min="0" step="any" value="8">
+      </div>
+    </div>
+
+    <label class="waste-row">
+      <input type="checkbox" id="waste-check">
+      Add 10% waste factor (recommended)
+    </label>
+
+    <div class="results-label">Results</div>
+    <div class="results-grid">
+      <div class="res primary">
+        <div class="res-label">Cubic Yards</div>
+        <div class="res-val" id="res-yd">—</div>
+        <div class="res-unit">yd&sup3;</div>
+      </div>
+      <div class="res">
+        <div class="res-label">Cubic Feet</div>
+        <div class="res-val" id="res-ft">—</div>
+        <div class="res-unit">ft&sup3;</div>
+      </div>
+      <div class="res">
+        <div class="res-label">40 lb Bags</div>
+        <div class="res-val" id="res-40">—</div>
+        <div class="res-unit">bags needed</div>
+      </div>
+      <div class="res">
+        <div class="res-label">60 lb Bags</div>
+        <div class="res-val" id="res-60">—</div>
+        <div class="res-unit">bags needed</div>
+      </div>
+      <div class="res">
+        <div class="res-label">80 lb Bags</div>
+        <div class="res-val" id="res-80">—</div>
+        <div class="res-unit">bags needed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>How to Calculate Concrete</h2>
+    <p>Concrete volume is calculated by multiplying the length, width, and thickness of your project. The result in cubic feet is then divided by 27 to convert to cubic yards — the standard unit used when ordering ready-mix.</p>
+    <p>For slabs: <strong>Volume (ft&sup3;) = Length &times; Width &times; (Thickness &divide; 12)</strong>. For round columns: <strong>Volume = &pi; &times; radius&sup2; &times; height &times; count</strong>.</p>
+
+    <h3>Bag Concrete Coverage</h3>
+    <table class="coverage-table">
+      <thead><tr><th>Bag Size</th><th>Yield (cu ft)</th><th>Yield (cu yd)</th></tr></thead>
+      <tbody>
+        <tr><td>40 lb bag</td><td>0.30 ft&sup3;</td><td>0.011 yd&sup3;</td></tr>
+        <tr><td>60 lb bag</td><td>0.45 ft&sup3;</td><td>0.017 yd&sup3;</td></tr>
+        <tr><td>80 lb bag</td><td>0.60 ft&sup3;</td><td>0.022 yd&sup3;</td></tr>
+      </tbody>
+    </table>
+    <p>For projects over 1 cubic yard, ordering ready-mix concrete is usually more cost-effective than buying bags.</p>
+
+    <h3>Frequently Asked Questions</h3>
+    <dl>
+      <div class="faq-item">
+        <dt>How thick should a concrete slab be?</dt>
+        <dd>Most residential slabs — patios, garage floors, driveways — are 4 inches thick. High-traffic areas may need 5–6 inches. Sidewalks are typically 3–4 inches.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>Should I add a waste factor?</dt>
+        <dd>Yes. Adding 10% is standard practice. It accounts for spillage, uneven subgrade, and form overages. Having a little extra is far better than running short mid-pour.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>How many cubic yards does a concrete truck hold?</dt>
+        <dd>A standard ready-mix truck holds 8–10 cubic yards. Most suppliers have a minimum order, often around 1 yard, and may charge extra for short loads.</dd>
+      </div>
+    </dl>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 HomeMaterialsCalculator.com</p>
+  <div class="footer-links">
+    <a href="concrete-calculator.html">Concrete</a>
+    <a href="mulch-calculator.html">Mulch</a>
+    <a href="gravel-calculator.html">Gravel</a>
+    <a href="topsoil-calculator.html">Topsoil</a>
+  </div>
+</footer>
+
+<script>
+var currentType='slab';
+function setType(t){
+  currentType=t;
+  document.querySelectorAll('.type-btn').forEach(function(b){b.classList.toggle('active',b.dataset.type===t);});
+  document.querySelectorAll('.input-section').forEach(function(s){s.classList.remove('visible');});
+  document.getElementById('inputs-'+t).classList.add('visible');
+  calculate();
+}
+function v(id){return parseFloat(document.getElementById(id).value)||0;}
+function fmt(n){return n<=0?'—':(n%1===0?n.toString():n.toFixed(2));}
+function fmtI(n){return n<=0?'—':n.toString();}
+function calculate(){
+  var waste=document.getElementById('waste-check').checked?1.1:1.0;
+  var cf=0;
+  if(currentType==='slab'){cf=v('slab-length')*v('slab-width')*(v('slab-thickness')/12);}
+  else if(currentType==='column'){var r=(v('col-diameter')/2)/12;cf=Math.PI*r*r*v('col-height')*(v('col-count')||1);}
+  else{cf=v('wall-length')*v('wall-height')*(v('wall-thickness')/12);}
+  cf*=waste;
+  var cy=cf/27;
+  document.getElementById('res-yd').textContent=fmt(cy);
+  document.getElementById('res-ft').textContent=fmt(cf);
+  document.getElementById('res-40').textContent=fmtI(cf>0?Math.ceil(cy/0.011):0);
+  document.getElementById('res-60').textContent=fmtI(cf>0?Math.ceil(cy/0.017):0);
+  document.getElementById('res-80').textContent=fmtI(cf>0?Math.ceil(cy/0.022):0);
+}
+document.querySelectorAll('.calc-input').forEach(function(el){el.addEventListener('input',calculate);});
+document.getElementById('waste-check').addEventListener('change',calculate);
+calculate();
+</script>
+</body>
+</html>
