@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paint Calculator — How Much Paint Do I Need? | HomeMaterialsCalculator.com</title>
+<meta name="description" content="Free paint calculator. Enter your room dimensions or total square footage to instantly calculate how many gallons or quarts of paint you need for any project.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6197205248872945" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--charcoal:#1c1917;--amber:#f59e0b;--amber-dk:#92400e;--amber-lt:#fffbeb;--amber-border:#fde68a;--bg:#fafaf9;--card:#fff;--text:#1c1917;--muted:#78716c;--stone:#f5f5f4;--border:#e7e5e4;--radius:12px;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-header{background:var(--charcoal);padding:0 20px}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.site-name{color:#fff;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;padding:16px 0;white-space:nowrap}
+.site-name span{color:var(--amber)}
+.tool-nav{display:flex;gap:2px;flex-wrap:wrap;padding:8px 0}
+.tool-nav a{color:rgba(255,255,255,.5);font-size:13px;font-weight:600;padding:7px 13px;border-radius:6px;transition:all .15s;white-space:nowrap}
+.tool-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.tool-nav a.active{color:#451a03;background:var(--amber)}
+.main{max-width:960px;margin:0 auto;padding:32px 16px 60px}
+.page-hero{margin-bottom:24px}
+.page-hero h1{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:var(--text);line-height:1.1;margin-bottom:6px;letter-spacing:.3px}
+.page-hero p{color:var(--muted);font-size:15px}
+.card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px;margin-bottom:20px;border-top:3px solid var(--amber)}
+.section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px}
+.type-toggle{display:flex;gap:8px;margin-bottom:28px}
+.type-btn{flex:1;padding:10px 8px;border:1.5px solid var(--border);border-radius:8px;background:transparent;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s}
+.type-btn:hover{border-color:var(--amber);color:var(--amber-dk)}
+.type-btn.active{border-color:var(--amber);background:var(--amber-lt);color:var(--amber-dk)}
+.input-section{display:none}
+.input-section.visible{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:13px;font-weight:600;color:var(--text)}
+.field .hint{font-size:11px;color:var(--muted);margin-top:-3px}
+.field input{padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .15s;background:#fff}
+.field input:focus{border-color:var(--amber)}
+.checkbox-row{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;color:var(--muted);cursor:pointer}
+.checkbox-row input{width:16px;height:16px;accent-color:var(--amber);cursor:pointer;flex-shrink:0}
+.results-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:24px 0 12px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.res{background:var(--stone);border-radius:10px;padding:14px 16px;border:1px solid var(--border)}
+.res.primary{background:var(--amber-lt);border-color:var(--amber-border)}
+.res-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.res-val{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:var(--text);line-height:1}
+.res.primary .res-val{color:var(--amber-dk)}
+.res-unit{font-size:11px;color:var(--muted);margin-top:3px}
+.info-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px;margin-bottom:20px}
+.info-card h2{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:.2px}
+.info-card h3{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;margin:20px 0 8px;letter-spacing:.2px}
+.info-card p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+.coverage-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.coverage-table th{text-align:left;padding:8px 12px;background:var(--stone);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.coverage-table td{padding:8px 12px;border-top:1px solid var(--border);color:var(--text)}
+.coverage-table tr:hover td{background:var(--stone)}
+.faq-item{margin-bottom:16px}
+.faq-item dt{font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px}
+.faq-item dd{font-size:14px;color:var(--muted);line-height:1.75}
+footer{max-width:960px;margin:0 auto;padding:24px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer p{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:var(--muted);transition:color .15s}
+.footer-links a:hover{color:var(--amber-dk)}
+@media(max-width:600px){.page-hero h1{font-size:28px}.type-btn{font-size:13px;padding:8px 4px}.res-val{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-name">Home<span>Materials</span>Calculator</a>
+    <nav class="tool-nav" aria-label="Tools">
+      <a href="index.html">Home</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="mulch-calculator.html">Mulch</a>
+      <a href="gravel-calculator.html">Gravel</a>
+      <a href="topsoil-calculator.html">Topsoil</a>
+      <a href="lumber-calculator.html">Lumber</a>
+      <a href="paint-calculator.html" class="active">Paint</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="page-hero">
+    <h1>Paint Calculator</h1>
+    <p>Enter your room dimensions or total square footage to find exactly how many gallons of paint you need.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label">Calculation method</div>
+    <div class="type-toggle" role="group" aria-label="Calculation method">
+      <button class="type-btn active" data-type="room" onclick="setType('room')">Room Dimensions</button>
+      <button class="type-btn" data-type="sqft" onclick="setType('sqft')">Square Footage</button>
+    </div>
+
+    <div id="inputs-room" class="input-section visible">
+      <div class="field">
+        <label for="room-length">Room length (ft)</label>
+        <input type="number" id="room-length" class="calc-input" min="0" step="any" value="12">
+      </div>
+      <div class="field">
+        <label for="room-width">Room width (ft)</label>
+        <input type="number" id="room-width" class="calc-input" min="0" step="any" value="12">
+      </div>
+      <div class="field">
+        <label for="room-height">Ceiling height (ft)</label>
+        <input type="number" id="room-height" class="calc-input" min="0" step="any" value="8">
+      </div>
+      <div class="field">
+        <label for="room-doors">Number of doors</label>
+        <span class="hint">Each subtracts ~20 sq ft</span>
+        <input type="number" id="room-doors" class="calc-input" min="0" step="1" value="1">
+      </div>
+      <div class="field">
+        <label for="room-windows">Number of windows</label>
+        <span class="hint">Each subtracts ~15 sq ft</span>
+        <input type="number" id="room-windows" class="calc-input" min="0" step="1" value="2">
+      </div>
+      <div class="field">
+        <label for="room-coats">Number of coats</label>
+        <input type="number" id="room-coats" class="calc-input" min="1" step="1" value="2">
+      </div>
+    </div>
+
+    <div id="inputs-sqft" class="input-section">
+      <div class="field">
+        <label for="sq-area">Total square footage</label>
+        <span class="hint">Paintable surface area</span>
+        <input type="number" id="sq-area" class="calc-input" min="0" step="any" value="500">
+      </div>
+      <div class="field">
+        <label for="sq-coats">Number of coats</label>
+        <input type="number" id="sq-coats" class="calc-input" min="1" step="1" value="2">
+      </div>
+    </div>
+
+    <label class="checkbox-row" id="ceiling-row">
+      <input type="checkbox" id="ceiling-check">
+      Include ceiling
+    </label>
+
+    <div class="results-label">Results</div>
+    <div class="results-grid">
+      <div class="res primary">
+        <div class="res-label">Gallons</div>
+        <div class="res-val" id="res-gal">—</div>
+        <div class="res-unit">gallons needed</div>
+      </div>
+      <div class="res">
+        <div class="res-label">Quarts</div>
+        <div class="res-val" id="res-qt">—</div>
+        <div class="res-unit">if buying quarts</div>
+      </div>
+      <div class="res">
+        <div class="res-label">Sq Ft to Paint</div>
+        <div class="res-val" id="res-sqft">—</div>
+        <div class="res-unit">sq ft (all coats)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>How to Calculate Paint Coverage</h2>
+    <p>Standard interior paint covers approximately 350–400 square feet per gallon on smooth surfaces. This calculator uses 350 sq ft per gallon as a conservative estimate that accounts for slight texture and normal application variance.</p>
+    <p>For a room, calculate the total wall area (perimeter &times; height), subtract doors and windows, then multiply by the number of coats. Divide the total square footage by 350 to get gallons.</p>
+
+    <h3>Coverage by Paint Type</h3>
+    <table class="coverage-table">
+      <thead><tr><th>Paint Type</th><th>Coverage per Gallon</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Interior flat / matte</td><td>350–400 sq ft</td><td>Hides imperfections well</td></tr>
+        <tr><td>Interior eggshell / satin</td><td>350–400 sq ft</td><td>Most common for walls</td></tr>
+        <tr><td>Interior semi-gloss</td><td>300–350 sq ft</td><td>Trim, kitchens, baths</td></tr>
+        <tr><td>Exterior paint</td><td>250–350 sq ft</td><td>Rougher surfaces reduce coverage</td></tr>
+        <tr><td>Primer</td><td>200–300 sq ft</td><td>New drywall, dark colors</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Frequently Asked Questions</h3>
+    <dl>
+      <div class="faq-item">
+        <dt>How many coats of paint do I need?</dt>
+        <dd>Two coats is standard for most interior projects. One coat may work for touch-ups or same-color repaints. Going from dark to light, or painting new drywall, typically requires a primer coat plus two finish coats.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>Should I buy extra paint?</dt>
+        <dd>Yes — always buy at least 10% more than calculated. Keep a small amount in a sealed container for future touch-ups. Paint batches can vary slightly in color, so matching later is difficult.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>Is it better to buy gallons or quarts?</dt>
+        <dd>Gallons are significantly cheaper per square foot. Only buy quarts if you need less than half a gallon, or for accent colors used in small areas. For anything over 150 sq ft, buy gallons.</dd>
+      </div>
+    </dl>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 HomeMaterialsCalculator.com</p>
+  <div class="footer-links">
+    <a href="concrete-calculator.html">Concrete</a>
+    <a href="mulch-calculator.html">Mulch</a>
+    <a href="gravel-calculator.html">Gravel</a>
+    <a href="topsoil-calculator.html">Topsoil</a>
+    <a href="lumber-calculator.html">Lumber</a>
+    <a href="paint-calculator.html">Paint</a>
+  </div>
+</footer>
+
+<script>
+var currentType = 'room';
+var COVERAGE = 350;
+
+function setType(t) {
+  currentType = t;
+  document.querySelectorAll('.type-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.type === t); });
+  document.querySelectorAll('.input-section').forEach(function(s) { s.classList.remove('visible'); });
+  document.getElementById('inputs-' + t).classList.add('visible');
+  document.getElementById('ceiling-row').style.display = t === 'room' ? 'flex' : 'none';
+  calculate();
+}
+
+function v(id) { return parseFloat(document.getElementById(id).value) || 0; }
+function fmt(n) { return n <= 0 ? '—' : (n % 1 === 0 ? n.toString() : n.toFixed(2)); }
+
+function calculate() {
+  var sqft = 0;
+  var coats = 1;
+
+  if (currentType === 'room') {
+    var l = v('room-length'), w = v('room-width'), h = v('room-height');
+    var doors = v('room-doors'), windows = v('room-windows');
+    coats = Math.max(1, v('room-coats'));
+    var walls = 2 * (l + w) * h;
+    var ceiling = document.getElementById('ceiling-check').checked ? (l * w) : 0;
+    sqft = Math.max(0, walls + ceiling - (doors * 20) - (windows * 15));
+  } else {
+    sqft = v('sq-area');
+    coats = Math.max(1, v('sq-coats'));
+  }
+
+  var totalSqft = sqft * coats;
+  var gallons = totalSqft > 0 ? Math.ceil(totalSqft / COVERAGE) : 0;
+  var quarts  = totalSqft > 0 ? Math.ceil(totalSqft / (COVERAGE / 4)) : 0;
+
+  document.getElementById('res-gal').textContent  = gallons > 0 ? gallons : '—';
+  document.getElementById('res-qt').textContent   = quarts  > 0 ? quarts  : '—';
+  document.getElementById('res-sqft').textContent = totalSqft > 0 ? Math.round(totalSqft).toLocaleString() : '—';
+}
+
+document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+document.getElementById('ceiling-check').addEventListener('change', calculate);
+calculate();
+</script>
+</body>
+</html>
