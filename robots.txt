@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.homematerialscalculator.com/sitemap.xml
+Sitemap: https://homematerialscalculator.com/sitemap.xml
