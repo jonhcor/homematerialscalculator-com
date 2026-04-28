@@ -3,686 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://homematerialscalculator.com/">
-<title>DecodeMyChart — Medical Abbreviations &amp; Lab Result Checker</title>
-<meta name="description" content="Decode any medical abbreviation in plain English — plus check if your lab results are normal. Free reference tool for patients, caregivers, and students. 238 terms across 20 medical categories.">
-<meta name="keywords" content="decode medical chart, medical abbreviations, are my lab results normal, what does SOB mean on my chart, PRN meaning, medical terminology lookup, understand my medical records, lab value checker, normal lab ranges, WBC normal range, HbA1c normal range, TSH normal range">
-<meta property="og:title" content="DecodeMyChart — Understand Your Medical Records">
-<meta property="og:description" content="Decode any medical abbreviation in plain English and check if your lab results are normal. Free tool for patients, caregivers, and students.">
-<meta name="google-adsense-account" content="ca-pub-6197205248872945">
+<title>Home Materials Calculator — Concrete, Mulch, Gravel &amp; Topsoil</title>
+<meta name="description" content="Free home materials calculators for concrete, mulch, gravel, and topsoil. Instantly calculate cubic yards, bags, and tons for any project — no signup required.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6197205248872945" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0A2540;--teal:#00A67E;--teal-l:#E8F7F3;--teal-d:#007A5E;--bg:#F4F6F9;--card:#fff;--border:#E2E8F0;--text:#1A2B3C;--muted:#64748B;--tag:#EEF2F7;--radius:12px;--radius-sm:8px;--shadow:0 1px 3px rgba(10,37,64,.08),0 4px 12px rgba(10,37,64,.05)}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-header{background:var(--navy);padding:0 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.hdr{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-family:"DM Serif Display",serif;color:#fff;font-size:22px;cursor:pointer}
-.logo span{color:var(--teal)}
-nav{display:flex;gap:4px}
-nav button{background:none;border:none;color:rgba(255,255,255,.7);font-family:"DM Sans",sans-serif;font-size:14px;font-weight:500;padding:6px 14px;border-radius:20px;cursor:pointer;transition:.2s}
-nav button:hover,nav button.on{background:rgba(255,255,255,.12);color:#fff}
-.wrap{max-width:1100px;margin:0 auto;padding:2rem 1rem}
-.two-col{display:grid;grid-template-columns:1fr 300px;gap:2rem;align-items:start}
-@media(max-width:768px){.two-col{grid-template-columns:1fr}.sidebar{display:none}}
-.hero{text-align:center;padding:3.5rem 1rem 3rem;background:linear-gradient(135deg,var(--navy) 0%,#1B3F6E 100%)}
-.hero h1{font-family:"DM Serif Display",serif;font-size:clamp(26px,5vw,42px);color:#fff;margin-bottom:.5rem;line-height:1.2}
-.hero p{color:rgba(255,255,255,.7);font-size:16px;margin-bottom:2rem}
-.search-wrap{max-width:600px;margin:0 auto;position:relative}
-#main-search{width:100%;height:58px;border:none;border-radius:30px;padding:0 60px 0 24px;font-family:"DM Sans",sans-serif;font-size:18px;outline:none;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.2)}
-.search-icon{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:20px}
-.dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,.18);max-height:380px;overflow-y:auto;z-index:200;display:none}
-.dropdown.vis{display:block}
-.ditem{padding:12px 20px;cursor:pointer;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);transition:.1s}
-.ditem:last-child{border-bottom:none}
-.ditem:hover{background:var(--teal-l)}
-.dt{font-weight:600;color:var(--navy);min-width:60px;font-size:15px}
-.df{font-size:13px;color:var(--muted);flex:1}
-.dc{font-size:11px;padding:2px 8px;border-radius:10px;background:var(--tag);color:var(--muted);white-space:nowrap}
-.catbar{background:var(--card);border-bottom:1px solid var(--border);padding:.75rem 1rem;overflow-x:auto}
-.catbar-inner{max-width:1100px;margin:0 auto;display:flex;gap:8px;align-items:center}
-.cat-lbl{font-size:12px;color:var(--muted);white-space:nowrap;font-weight:500;margin-right:4px}
-.chip{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:#fff;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;transition:.15s;color:var(--text)}
-.chip:hover{border-color:var(--teal);color:var(--teal)}
-.chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
-.results-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
-.count{font-size:14px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-.acard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;cursor:pointer;transition:.2s;box-shadow:var(--shadow)}
-.acard:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,166,126,.12)}
-.aterm{font-size:24px;font-weight:600;color:var(--navy);font-family:"DM Serif Display",serif}
-.afull{font-size:13px;color:var(--teal-d);font-weight:500;margin:2px 0 8px}
-.adef{font-size:13px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.atag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;background:var(--tag);color:var(--muted);font-weight:500;margin-top:10px;text-transform:uppercase;letter-spacing:.5px}
-.back-btn{display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-size:14px;font-weight:500;cursor:pointer;margin-bottom:1.5rem;border:none;background:none;font-family:"DM Sans",sans-serif;padding:0}
-.detail-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
-.d-term{font-family:"DM Serif Display",serif;font-size:56px;color:var(--navy);line-height:1}
-.d-full{font-size:20px;color:var(--teal-d);font-weight:500;margin:8px 0 16px}
-.d-tag{display:inline-block;font-size:12px;padding:4px 14px;border-radius:20px;background:var(--teal-l);color:var(--teal-d);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1.5rem}
-.d-sec{margin-bottom:1.5rem}
-.d-sec h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;margin-bottom:.5rem}
-.d-sec p{font-size:16px;line-height:1.7;color:var(--text)}
-.usage-block{background:var(--bg);border-left:3px solid var(--teal);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:.75rem 1rem;font-size:15px;font-style:italic;color:var(--text)}
-.rel-chips{display:flex;flex-wrap:wrap;gap:8px}
-.rel-chip{padding:6px 14px;border:1px solid var(--border);border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s;color:var(--navy);background:#fff}
-.rel-chip:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-l)}
-.disclaimer{background:#FFFBEB;border:1px solid #FCD34D;border-radius:var(--radius-sm);padding:1rem;font-size:13px;color:#92400E;margin-top:1.5rem;display:flex;gap:8px}
-.divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
-.ad-block{width:100%;overflow:hidden;margin-bottom:1.5rem}
-.cv-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;box-shadow:var(--shadow);margin-bottom:1rem}
-.cv-card h3{font-family:"DM Serif Display",serif;font-size:20px;color:var(--navy);margin-bottom:1.25rem}
-.cv-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
-.cv-grp{display:flex;flex-direction:column;gap:4px;flex:1;min-width:100px}
-.cv-grp label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.cv-grp input,.cv-grp select{height:44px;border:1px solid var(--border);border-radius:var(--radius-sm);padding:0 12px;font-family:"DM Sans",sans-serif;font-size:16px;color:var(--text);outline:none;background:#fff}
-.cv-grp input:focus,.cv-grp select:focus{border-color:var(--teal)}
-.cv-result{background:var(--teal-l);border:1px solid #A7DED0;border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-top:1rem;font-size:18px;font-weight:600;color:var(--teal-d)}
-.sidebar-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);margin-bottom:1rem}
-.sidebar-section h4{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:1rem}
-.sidebar-list{list-style:none}
-.sidebar-list li{padding:6px 0;border-bottom:1px solid var(--border);cursor:pointer;display:flex;align-items:center;gap:8px;transition:.15s}
-.sidebar-list li:last-child{border-bottom:none}
-.sidebar-list li:hover{color:var(--teal)}
-.sl-term{font-weight:600;min-width:52px;font-size:14px;color:var(--navy)}
-.sl-full{font-size:13px;color:var(--muted);flex:1}
-.empty{text-align:center;padding:4rem 2rem;color:var(--muted)}
-.empty h3{font-size:18px;color:var(--text);margin-bottom:.5rem}
-.page-hdr{margin-bottom:2rem}
-.page-hdr h2{font-family:"DM Serif Display",serif;font-size:28px;color:var(--navy);margin-bottom:.25rem}
-.page-hdr p{color:var(--muted);font-size:15px}
-
-.lab-range-widget{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.25rem;margin-top:.75rem}
-.lrw-input-row{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
-.lrw-unit{font-size:13px;color:var(--muted);white-space:nowrap;font-weight:600;background:var(--tag);padding:4px 10px;border-radius:20px}
-.lrw-bar{position:relative;height:22px;border-radius:11px;overflow:visible;display:flex;margin-bottom:8px}
-.lrw-zone-low{background:#FCA5A5;border-radius:11px 0 0 11px;flex:0 0 20%}
-.lrw-zone-normal{background:#6EE7B7;flex:1}
-.lrw-zone-high{background:#FCA5A5;border-radius:0 11px 11px 0;flex:0 0 20%}
-.lrw-needle{position:absolute;top:-4px;width:4px;height:30px;border-radius:2px;transform:translateX(-50%);transition:left .35s,background .35s;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2}
-.lrw-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px;gap:4px}
-.lrw-label-normal{color:#059669;font-weight:600;text-align:center;flex:1}
-.lrw-label-low,.lrw-label-high{color:#DC2626;font-weight:500;flex:0 0 20%;text-align:center}
-.lrw-result{border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-top:1rem;border:1px solid var(--border)}
-.lrw-status{font-size:15px;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.lrw-tip{font-size:14px;color:var(--muted);line-height:1.7}
-footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:2rem 1rem;font-size:13px;margin-top:4rem}
-footer strong{color:rgba(255,255,255,.9)}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1c1917;--amber:#f59e0b;--amber-dk:#92400e;--amber-lt:#fffbeb;--amber-border:#fde68a;
+  --bg:#fafaf9;--card:#fff;--text:#1c1917;--muted:#78716c;--stone:#f5f5f4;--border:#e7e5e4;--radius:12px;
+}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-header{background:var(--charcoal);padding:0 20px}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.site-name{color:#fff;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;padding:16px 0;white-space:nowrap}
+.site-name span{color:var(--amber)}
+.tool-nav{display:flex;gap:2px;flex-wrap:wrap;padding:8px 0}
+.tool-nav a{color:rgba(255,255,255,.5);font-size:13px;font-weight:600;padding:7px 13px;border-radius:6px;transition:all .15s;white-space:nowrap}
+.tool-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.tool-nav a.active{color:#451a03;background:var(--amber)}
+.main{max-width:960px;margin:0 auto;padding:40px 16px 60px}
+.hero{margin-bottom:36px}
+.hero h1{font-family:'Oswald',sans-serif;font-size:38px;font-weight:700;color:var(--text);line-height:1.1;margin-bottom:10px;letter-spacing:.3px}
+.hero h1 span{color:var(--amber-dk)}
+.hero p{color:var(--muted);font-size:16px;max-width:560px;line-height:1.65}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.tool-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:24px;transition:all .2s;display:flex;flex-direction:column;gap:12px}
+.tool-card:hover{border-color:var(--amber);box-shadow:0 4px 16px rgba(0,0,0,.06);transform:translateY(-2px)}
+.tool-icon{width:44px;height:44px;border-radius:10px;background:var(--amber-lt);border:1px solid var(--amber-border);display:flex;align-items:center;justify-content:center}
+.tool-icon svg{width:22px;height:22px}
+.tool-name{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--text);letter-spacing:.2px}
+.tool-desc{font-size:14px;color:var(--muted);line-height:1.6;flex:1}
+.tool-outputs{display:flex;gap:6px;flex-wrap:wrap}
+.output-pill{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:var(--stone);border:1px solid var(--border);color:var(--muted)}
+.tool-cta{display:inline-flex;align-items:center;gap:6px;background:var(--charcoal);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;padding:10px 18px;border-radius:8px;transition:background .15s;margin-top:4px;align-self:flex-start}
+.tool-cta:hover{background:#292524}
+.tool-cta svg{width:14px;height:14px;flex-shrink:0}
+.info-section{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:28px}
+.info-section h2{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:.2px}
+.info-section p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+footer{max-width:960px;margin:0 auto;padding:24px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer p{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:var(--muted);transition:color .15s}
+.footer-links a:hover{color:var(--amber-dk)}
+@media(max-width:600px){.hero h1{font-size:30px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="hdr">
-    <div class="logo" onclick="navigate('home')">Decode<span>MyChart</span></div>
-    <nav>
-      <button id="nav-home" class="on" onclick="navigate('home')">Search</button>
-      <button id="nav-converter" onclick="navigate('converter')">Unit Converter</button>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-name">Home<span>Materials</span>Calculator</a>
+    <nav class="tool-nav" aria-label="Tools">
+      <a href="index.html" class="active">Home</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="mulch-calculator.html">Mulch</a>
+      <a href="gravel-calculator.html">Gravel</a>
+      <a href="topsoil-calculator.html">Topsoil</a>
+      <a href="lumber-calculator.html">Lumber</a>
+      <a href="paint-calculator.html">Paint</a>
+    <a href="flooring-calculator.html">Flooring</a>
     </nav>
   </div>
 </header>
-<div id="app"></div>
-<noscript>
-<div style="max-width:900px;margin:2rem auto;padding:0 1rem;font-family:sans-serif;color:#1A2B3C">
-  <h1 style="font-size:2rem;margin-bottom:.5rem">DecodeMyChart — Medical Abbreviation Reference</h1>
-  <p style="color:#64748B;margin-bottom:2rem;font-size:1.1rem">Plain-English definitions for medical abbreviations, acronyms, and lab values. Free reference for patients, caregivers, and students.</p>
 
-  <h2 style="font-size:1.4rem;margin:2rem 0 1rem;border-bottom:2px solid #00A67E;padding-bottom:.5rem">General Medical Terms</h2>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">SOB — Shortness of Breath</h3><p>Difficulty breathing or feeling breathless. A very common symptom documented in charts to describe respiratory complaints. Patients presenting with SOB may have conditions ranging from anxiety and asthma to heart failure and pulmonary embolism.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">CC — Chief Complaint</h3><p>The primary reason the patient is seeking medical care, usually recorded in the patient's own words. The chief complaint is the starting point of every clinical encounter and guides the entire diagnostic workup.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">Dx — Diagnosis</h3><p>The medical identification of a disease or condition based on symptoms, exam findings, and test results. A diagnosis is the conclusion reached after evaluating all available clinical information.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">Tx — Treatment</h3><p>The medical management plan for a patient's condition, which may include medications, procedures, lifestyle changes, or referrals to specialists.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">Hx — History</h3><p>The patient's medical background including past illnesses, surgeries, hospitalizations, and family history relevant to current care.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">NPO — Nothing by Mouth</h3><p>From the Latin nil per os, meaning the patient must not eat, drink, or take anything by mouth. Typically required before surgery, certain procedures, or when the bowel needs to rest.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">DNR — Do Not Resuscitate</h3><p>A medical order indicating that if the patient's heart stops or they stop breathing, no CPR or resuscitation efforts should be performed. This is a legally binding order based on the patient's wishes.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">WNL — Within Normal Limits</h3><p>A shorthand indicating that a test result, exam finding, or measurement falls within the expected normal range. Commonly used in physical exam documentation.</p></div>
+<main class="main">
+  <div class="hero">
+    <h1>Free Home <span>Materials</span> Calculators</h1>
+    <p>Enter your project dimensions and get instant results — cubic yards, bags, tons, and more. No signup, no ads in the way, no extra clicks.</p>
+  </div>
 
-  <h2 style="font-size:1.4rem;margin:2rem 0 1rem;border-bottom:2px solid #00A67E;padding-bottom:.5rem">Lab Values and Normal Ranges</h2>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">CBC — Complete Blood Count</h3><p>A blood test measuring red blood cells, white blood cells, hemoglobin, hematocrit, and platelets. One of the most commonly ordered lab tests used to screen for anemia, infection, and blood disorders.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">WBC — White Blood Cell Count (Normal: 4.5–11.0 K/uL)</h3><p>Measures infection-fighting cells in the blood. A high WBC (leukocytosis) often signals infection or inflammation. A low WBC (leukopenia) may indicate viral illness, bone marrow problems, or immune suppression.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">Hgb — Hemoglobin (Normal: 11.5–17.5 g/dL)</h3><p>The protein in red blood cells that carries oxygen throughout the body. Low hemoglobin indicates anemia, which causes fatigue, pallor, and shortness of breath. Common causes include iron deficiency, vitamin B12 deficiency, and chronic disease.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">HbA1c — Hemoglobin A1c (Normal: 4.0–5.7%)</h3><p>A blood test reflecting average blood sugar levels over the past 2 to 3 months. Used to diagnose and monitor diabetes. A result of 5.7 to 6.4 percent indicates prediabetes; 6.5 percent or above indicates diabetes.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">TSH — Thyroid-Stimulating Hormone (Normal: 0.4–4.0 mIU/L)</h3><p>A pituitary hormone that regulates thyroid function. A high TSH suggests an underactive thyroid (hypothyroidism) causing fatigue and weight gain. A low TSH suggests an overactive thyroid (hyperthyroidism) causing weight loss and rapid heartbeat.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">Cr — Creatinine (Normal: 0.6–1.2 mg/dL)</h3><p>A waste product from muscle metabolism filtered by the kidneys. Elevated creatinine is a key indicator of reduced kidney function. Rising creatinine over several days is more concerning than a single elevated value.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">INR — International Normalized Ratio (Normal: 0.8–1.1)</h3><p>A standardized measure of how long blood takes to clot. Used primarily to monitor warfarin (blood thinner) therapy. Therapeutic range for warfarin patients is usually 2.0 to 3.0. Values above 3.5 significantly increase bleeding risk.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">LDL — Low-Density Lipoprotein (Normal: under 100 mg/dL)</h3><p>Known as bad cholesterol. High LDL increases the risk of plaque buildup in arteries, leading to heart attack and stroke. Lifestyle changes and statin medications are the primary treatments for elevated LDL.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">eGFR — Estimated Glomerular Filtration Rate (Normal: 60–120 mL/min)</h3><p>An estimate of how well the kidneys are filtering blood. A result below 60 mL/min indicates chronic kidney disease. The lower the number, the less kidney function remains. Below 15 typically requires dialysis or a kidney transplant.</p></div>
+  <div class="tools-grid">
 
-  <h2 style="font-size:1.4rem;margin:2rem 0 1rem;border-bottom:2px solid #00A67E;padding-bottom:.5rem">Pharmacy and Dosing Terms</h2>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">PRN — As Needed</h3><p>From the Latin pro re nata, meaning as the thing is needed. Medication is taken only when symptoms occur rather than on a fixed daily schedule. For example, a pain medication prescribed PRN is taken only when pain is present.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">BID — Twice Daily</h3><p>Medication taken two times per day, typically morning and evening, roughly 12 hours apart. Common examples include many antibiotics and blood pressure medications.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">QD — Once Daily</h3><p>Medication administered once every 24 hours. Many chronic disease medications such as statins, blood pressure pills, and thyroid medications are prescribed once daily.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">IV — Intravenous</h3><p>Medication or fluids delivered directly into a vein through a needle or catheter, allowing for the most rapid absorption into the bloodstream. Used in hospitals for antibiotics, fluids, pain medications, and many other treatments.</p></div>
+    <a href="concrete-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="8" width="18" height="12" rx="1.5" stroke="#92400e" stroke-width="1.5"/>
+          <path d="M5 8V5.5A1.5 1.5 0 016.5 4h9A1.5 1.5 0 0117 5.5V8" stroke="#92400e" stroke-width="1.5"/>
+          <path d="M8 12h6M8 15h4" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tool-name">Concrete Calculator</div>
+      <div class="tool-desc">Calculate how much concrete you need for slabs, columns, and walls. Get cubic yards and bag counts instantly.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Cubic yards</span>
+        <span class="output-pill">Cubic feet</span>
+        <span class="output-pill">40 / 60 / 80 lb bags</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
 
-  <h2 style="font-size:1.4rem;margin:2rem 0 1rem;border-bottom:2px solid #00A67E;padding-bottom:.5rem">Cardiology Terms</h2>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">MI — Myocardial Infarction</h3><p>A heart attack, occurring when blood flow to part of the heart muscle is blocked long enough to cause permanent damage. Symptoms include chest pain, shortness of breath, and pain radiating to the arm or jaw. A medical emergency requiring immediate treatment.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">HTN — Hypertension</h3><p>High blood pressure, defined as consistently elevated blood pressure readings above 130 over 80 mmHg. A major risk factor for heart attack, stroke, and kidney disease. Often called the silent killer because it has no symptoms.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">A-Fib — Atrial Fibrillation</h3><p>An irregular, often rapid heart rhythm originating in the upper chambers of the heart. Significantly increases the risk of stroke. Treated with rate control medications, blood thinners, and sometimes cardioversion or ablation.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">CHF — Congestive Heart Failure</h3><p>A condition where the heart cannot pump blood efficiently, causing fluid to back up into the lungs and body tissues. Causes shortness of breath, leg swelling, and fatigue. Managed with diuretics, ACE inhibitors, and beta-blockers.</p></div>
+    <a href="mulch-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 15c2-3 4-2 5-4s1-5 3-6 3 2 3 4-1 3 0 5" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 18h18" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M12 15c1-2 3-2 4-4" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tool-name">Mulch Calculator</div>
+      <div class="tool-desc">Find how many cubic yards or bags of mulch you need for your landscape beds at any depth.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Cubic yards</span>
+        <span class="output-pill">Cubic feet</span>
+        <span class="output-pill">2 &amp; 3 cu ft bags</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
 
-  <h2 style="font-size:1.4rem;margin:2rem 0 1rem;border-bottom:2px solid #00A67E;padding-bottom:.5rem">Insurance and Billing Terms</h2>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">EOB — Explanation of Benefits</h3><p>A document sent by your insurance company after a medical claim is processed. It shows what was billed, what your insurance paid, and what you may owe. An EOB is not a bill — it is an informational statement showing how your claim was processed.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">OOP — Out of Pocket</h3><p>The amount you pay directly for healthcare costs not covered by insurance, including deductibles, copays, and coinsurance. Once you reach your annual out-of-pocket maximum, your insurance covers 100 percent of remaining covered costs.</p></div>
-  <div style="margin-bottom:1.5rem"><h3 style="color:#0A2540">PA — Prior Authorization</h3><p>Approval required from your insurance company before certain medications, procedures, or specialist visits are covered. Your doctor submits clinical documentation to justify medical necessity. Denial of a prior authorization can be appealed.</p></div>
+    <a href="gravel-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7" cy="9" r="2" stroke="#92400e" stroke-width="1.5"/>
+          <circle cx="13" cy="7" r="1.5" stroke="#92400e" stroke-width="1.5"/>
+          <circle cx="16" cy="11" r="2" stroke="#92400e" stroke-width="1.5"/>
+          <circle cx="9" cy="13" r="1.5" stroke="#92400e" stroke-width="1.5"/>
+          <path d="M2 18h18" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tool-name">Gravel Calculator</div>
+      <div class="tool-desc">Calculate cubic yards and tons of gravel, crushed stone, or pea gravel for driveways, paths, and drainage.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Cubic yards</span>
+        <span class="output-pill">Tons</span>
+        <span class="output-pill">5 gravel types</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
 
-  <p style="margin-top:3rem;padding:1rem;background:#f8f8f8;border-radius:8px;font-size:13px;color:#64748B">
-    <strong>Educational reference only.</strong> This site is for informational purposes and does not constitute medical advice. Always consult a qualified healthcare provider regarding your specific medical situation. Normal lab ranges can vary between laboratories and patient populations.
-  </p>
-</div>
-</noscript>
+    <a href="topsoil-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 12h18" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 16h18" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M5 8c1-2 3-3 6-3s5 1 6 3" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 12c1-2 2-3 4-3" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 12c-1-2-2-3-4-3" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tool-name">Topsoil Calculator</div>
+      <div class="tool-desc">How much topsoil do you need for a new lawn or garden bed? Get cubic yards, bags, and tons in seconds.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Cubic yards</span>
+        <span class="output-pill">40 lb bags</span>
+        <span class="output-pill">Tons</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="lumber-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="9" width="18" height="4" rx="1" stroke="#92400e" stroke-width="1.5"/>
+          <path d="M6 9V6M10 9V5M14 9V6M18 9V7" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tool-name">Lumber Calculator</div>
+      <div class="tool-desc">Calculate board feet from board dimensions, or find how many boards you need to cover a deck, floor, or fence.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Board feet</span>
+        <span class="output-pill">Linear feet</span>
+        <span class="output-pill">Boards needed</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="paint-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 3h8a1 1 0 011 1v2H6V4a1 1 0 011-1z" stroke="#92400e" stroke-width="1.5"/>
+          <path d="M6 6h10l-1.5 10a1 1 0 01-1 .9H8.5a1 1 0 01-1-.9L6 6z" stroke="#92400e" stroke-width="1.5"/>
+          <path d="M9 10h4" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tool-name">Paint Calculator</div>
+      <div class="tool-desc">Enter room dimensions or total square footage to instantly find how many gallons or quarts of paint you need.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Gallons</span>
+        <span class="output-pill">Quarts</span>
+        <span class="output-pill">Room or sq ft mode</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="flooring-calculator.html" class="tool-card">
+      <div class="tool-icon">
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="8" height="5" rx="1" stroke="#92400e" stroke-width="1.5"/>
+          <rect x="12" y="4" width="8" height="5" rx="1" stroke="#92400e" stroke-width="1.5"/>
+          <rect x="2" y="13" width="8" height="5" rx="1" stroke="#92400e" stroke-width="1.5"/>
+          <rect x="12" y="13" width="8" height="5" rx="1" stroke="#92400e" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="tool-name">Flooring Calculator</div>
+      <div class="tool-desc">Calculate square footage and boxes needed for any flooring type. Waste % auto-adjusts for your material and layout pattern.</div>
+      <div class="tool-outputs">
+        <span class="output-pill">Sq ft with waste</span>
+        <span class="output-pill">Boxes needed</span>
+        <span class="output-pill">7 layout types</span>
+      </div>
+      <div class="tool-cta">
+        Open calculator
+        <svg viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="info-section">
+    <h2>About HomeMaterialsCalculator.com</h2>
+    <p>Planning a home improvement project means figuring out how much material to buy — and getting that number wrong wastes money, trips to the hardware store, and time. These calculators handle the math instantly so you can focus on the work.</p>
+    <p>Every calculator accounts for standard waste factors, supports both bulk and bagged material estimates, and works on any device. Results update as you type — no buttons to press.</p>
+  </div>
+</main>
 
 <footer>
-  <strong>DecodeMyChart.com</strong> &mdash; Medical Abbreviation Reference &nbsp;|&nbsp; For educational use only. Always consult a qualified healthcare provider.<br>
-  <span style="margin-top:.5rem;display:block">&copy; 2025 DecodeMyChart.com. Not a substitute for professional medical advice. &nbsp;|&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,.5)">Privacy Policy</a></span>
-</footer>
-<script>
-const DATA=[
-{term:'SOB',full:'Shortness of Breath',cat:'general',def:'Difficulty breathing or feeling breathless. A very common symptom documented in charts to describe respiratory complaints.',usage:'Patient presents with SOB on exertion, worse when lying flat.',related:["DOE","CP","CHF","COPD"]},
-{term:'CP',full:'Chest Pain',cat:'general',def:'Pain or discomfort in the chest area. Can range from minor musculoskeletal causes to serious cardiac conditions. Always evaluated urgently.',usage:'CC: CP radiating to left arm, onset 2 hours ago.',related:["SOB","MI","ACS","EKG"]},
-{term:'N/V',full:'Nausea and Vomiting',cat:'general',def:'Feeling sick to the stomach with or without throwing up. Commonly documented together as a single symptom cluster.',usage:'Patient reports N/V x 3 days, unable to tolerate PO.',related:["NPO","PO","Abd"]},
-{term:'Hx',full:'History',cat:'general',def:'The patient\'s medical background including past illnesses, surgeries, hospitalizations, and family history relevant to current care.',usage:'Hx of HTN, DM Type 2, and prior MI in 2019.',related:["PMH","FH","SH","HPI"]},
-{term:'Dx',full:'Diagnosis',cat:'general',def:'The medical identification of a disease or condition based on symptoms, exam findings, and test results.',usage:'Dx: Community-acquired pneumonia.',related:["Tx","Sx","Rx","DDx"]},
-{term:'DDx',full:'Differential Diagnosis',cat:'general',def:'A list of possible diagnoses ranked by likelihood that the clinician considers before reaching a final diagnosis.',usage:'DDx includes MI, PE, and aortic dissection.',related:["Dx","Tx","W/U"]},
-{term:'Tx',full:'Treatment',cat:'general',def:'The medical management plan for a patient\'s condition, which may include medications, procedures, or lifestyle changes.',usage:'Tx: IV fluids, antibiotics, and supportive care.',related:["Dx","Rx","PRN"]},
-{term:'Rx',full:'Prescription or Treatment',cat:'general',def:'In pharmacy, Rx refers to a prescription. In general charts, it may also mean treatment or therapy.',usage:'Rx: Amoxicillin 500mg PO TID x 10 days.',related:["Tx","OTC","DAW","PRN"]},
-{term:'Sx',full:'Symptoms',cat:'general',def:'Subjective experiences reported by the patient such as pain, fatigue, or dizziness as opposed to signs a clinician observes.',usage:'Sx include fever, fatigue, and mild cough for 5 days.',related:["Hx","CC","ROS","Dx"]},
-{term:'CC',full:'Chief Complaint',cat:'general',def:'The primary reason the patient is seeking medical care, usually recorded in the patient\'s own words.',usage:'CC: I have had a bad headache for two days and my vision is blurry.',related:["HPI","Hx","ROS"]},
-{term:'HPI',full:'History of Present Illness',cat:'general',def:'A detailed description of the current medical problem including when it started, what makes it better or worse, and how it has progressed.',usage:'HPI: 54yo male with 3-day Hx of worsening SOB, productive cough, and fever.',related:["CC","PMH","ROS"]},
-{term:'PMH',full:'Past Medical History',cat:'general',def:'A record of the patient\'s prior medical conditions, diagnoses, hospitalizations, and surgeries.',usage:'PMH: HTN, Type 2 DM, GERD, appendectomy 2010.',related:["FH","SH","Hx"]},
-{term:'FH',full:'Family History',cat:'general',def:'Medical conditions in the patient\'s biological relatives that may be relevant to their own health risk.',usage:'FH: Father died of MI at 58. Mother has HTN and DM.',related:["PMH","SH","Hx"]},
-{term:'SH',full:'Social History',cat:'general',def:'Information about a patient\'s lifestyle including occupation, tobacco and alcohol use, housing, and relationships.',usage:'SH: Former smoker 20 pack-years, quit 2015. Occasional ETOH.',related:["PMH","FH","Hx"]},
-{term:'ROS',full:'Review of Systems',cat:'general',def:'A systematic checklist of symptoms going through each body system to identify conditions the patient may not have mentioned.',usage:'ROS: Positive for SOB and fatigue. Negative for fever, N/V, chest pain.',related:["HPI","CC","VS"]},
-{term:'VS',full:'Vital Signs',cat:'general',def:'Basic measurements of essential body functions: temperature, heart rate, blood pressure, respiratory rate, and oxygen saturation.',usage:'VS: T 38.2C, HR 98, BP 128/82, RR 18, SpO2 96% on RA.',related:["BP","HR","SpO2"]},
-{term:'WNL',full:'Within Normal Limits',cat:'general',def:'A shorthand indicating that a test result, exam finding, or measurement falls within the expected normal range.',usage:'Heart and lung sounds WNL. Abdomen WNL.',related:["NAD","VS"]},
-{term:'NAD',full:'No Acute Distress',cat:'general',def:'A common exam finding indicating the patient does not appear to be in immediate pain or distress at the time of examination.',usage:'General: Patient is alert, oriented, in NAD.',related:["A&O","WNL"]},
-{term:'A&O',full:'Alert and Oriented',cat:'general',def:'Describes a patient\'s level of consciousness. Usually noted as A&Ox3 (person, place, time) or A&Ox4 (adding situation).',usage:'Neuro: A&Ox4, speech clear, no focal deficits.',related:["LOC","GCS","NAD"]},
-{term:'STAT',full:'Immediately',cat:'general',def:'From the Latin statim meaning at once. Used to mark orders, labs, or medications that must be done right away.',usage:'Order CBC STAT. Give 325mg aspirin STAT.',related:["PRN","QD"]},
-{term:'DNR',full:'Do Not Resuscitate',cat:'general',def:'A medical order indicating that if the patient\'s heart stops or they stop breathing, no CPR or resuscitation should be performed.',usage:'Patient has valid DNR on file. DNR/DNI orders confirmed.',related:["DNI","CPR","AMA"]},
-{term:'DNI',full:'Do Not Intubate',cat:'general',def:'A medical order specifying that the patient should not be placed on a mechanical ventilator, even in an emergency.',usage:'Goals of care discussed. Patient is DNR/DNI.',related:["DNR","BiPAP","CPR"]},
-{term:'AMA',full:'Against Medical Advice',cat:'general',def:'When a patient chooses to leave the hospital or refuse treatment despite being told by their physician that it could be harmful.',usage:'Patient left AMA after refusing IV antibiotics. Form signed.',related:["Hx"]},
-{term:'NPO',full:'Nothing by Mouth',cat:'general',def:'Latin nil per os. Patient must not eat, drink, or take anything by mouth. Typically required before surgery or procedures.',usage:'Patient NPO after midnight for OR in the morning.',related:["PO","IV"]},
-{term:'D/C',full:'Discharge or Discontinue',cat:'general',def:'Either discharging a patient from the hospital, or stopping a medication or treatment. Context determines meaning.',usage:'DC home with oral antibiotics. DC IV heparin infusion.',related:["Tx","Rx"]},
-{term:'Abd',full:'Abdomen',cat:'general',def:'Refers to the abdominal region of the body. Frequently documented in physical exam notes.',usage:'Abd: soft, non-tender, non-distended, bowel sounds present.',related:["N/V","GI"]},
-{term:'DOE',full:'Dyspnea on Exertion',cat:'general',def:'Shortness of breath that occurs during physical activity rather than at rest.',usage:'Patient reports DOE with climbing one flight of stairs.',related:["SOB","CHF","COPD"]},
-{term:'W/U',full:'Workup',cat:'general',def:'The diagnostic evaluation process including tests, imaging, and consultations ordered to identify or rule out a condition.',usage:'Admit for further W/U of new onset A-Fib.',related:["Dx","DDx"]},
-{term:'c/o',full:'Complains Of',cat:'general',def:'Shorthand indicating what the patient is reporting as their main symptom or concern.',usage:'Patient c/o worsening knee pain x 2 weeks.',related:["CC","Sx","HPI"]},
-{term:'s/p',full:'Status Post',cat:'general',def:'Used to indicate a patient has previously undergone a procedure or experienced a medical event.',usage:'s/p appendectomy 2019. s/p MI 2021.',related:["PMH","Hx","Dx"]},
-{term:'q',full:'Every',cat:'general',def:'Latin quaque. Used in dosing instructions to mean every as in q4h means every 4 hours, q8h every 8 hours.',usage:'Acetaminophen 650mg PO q6h PRN pain.',related:["PRN","QD","BID","TID"]},
-{term:'RA',full:'Room Air',cat:'general',def:'When documenting oxygen levels, RA means the patient is breathing regular room air without supplemental oxygen.',usage:'SpO2 96% on RA. No supplemental O2 needed.',related:["SpO2","BiPAP","CPAP"]},
-{term:'PE',full:'Physical Exam',cat:'general',def:'The hands-on assessment a clinician performs during a visit, checking vital signs and examining each body system.',usage:'PE: NAD, lungs clear, abdomen soft, no edema.',related:["VS","ROS","WNL"]},
-{term:'PRN',full:'Pro Re Nata - As Needed',cat:'pharmacy',def:'Latin for as the thing is needed. Medication taken only when symptoms occur, not on a fixed daily schedule.',usage:'Ibuprofen 400mg PO PRN pain, max q6h.',related:["QD","BID","TID","QID"]},
-{term:'QD',full:'Once Daily',cat:'pharmacy',def:'Medication administered once every 24 hours.',usage:'Lisinopril 10mg PO QD every morning.',related:["BID","TID","QID","QHS"]},
-{term:'BID',full:'Twice Daily',cat:'pharmacy',def:'Medication taken two times per day, typically morning and evening, roughly 12 hours apart.',usage:'Metformin 500mg PO BID with meals.',related:["QD","TID","QID","PRN"]},
-{term:'TID',full:'Three Times Daily',cat:'pharmacy',def:'Medication administered three times per day.',usage:'Amoxicillin 500mg PO TID x 10 days.',related:["BID","QID","QD","PRN"]},
-{term:'QID',full:'Four Times Daily',cat:'pharmacy',def:'Medication taken four times a day, usually every 6 hours.',usage:'Acetaminophen 325mg PO QID PRN pain.',related:["TID","BID","QD","PRN"]},
-{term:'QHS',full:'Every Bedtime',cat:'pharmacy',def:'Medication taken once daily at bedtime.',usage:'Melatonin 3mg PO QHS PRN sleep.',related:["QD","PRN","PO"]},
-{term:'AC',full:'Before Meals',cat:'pharmacy',def:'Medication taken before eating.',usage:'Metoclopramide 10mg PO AC and QHS.',related:["PC","PO","TID"]},
-{term:'PC',full:'After Meals',cat:'pharmacy',def:'Medication taken after eating to reduce stomach irritation.',usage:'Iron supplements 325mg PO PC to reduce GI upset.',related:["AC","PO","TID"]},
-{term:'PO',full:'Per Os - By Mouth',cat:'pharmacy',def:'Latin for by mouth. Medication taken orally as a pill, tablet, capsule, or liquid.',usage:'Switch from IV to PO antibiotics once tolerating oral intake.',related:["IV","IM","SQ","NPO"]},
-{term:'IV',full:'Intravenous',cat:'pharmacy',def:'Medication or fluids delivered directly into a vein, allowing for rapid absorption.',usage:'NS 1L IV bolus over 1 hour for dehydration.',related:["IM","SQ","PO","PICC"]},
-{term:'IM',full:'Intramuscular',cat:'pharmacy',def:'Injection delivered into the muscle tissue. Absorbed faster than SQ, slower than IV.',usage:'Flu vaccine 0.5mL IM left deltoid.',related:["IV","SQ","PO"]},
-{term:'SQ',full:'Subcutaneous',cat:'pharmacy',def:'Injection into the fatty layer just below the skin. Used for insulin and many blood thinners.',usage:'Insulin glargine 20 units SQ QHS.',related:["IM","IV","PO"]},
-{term:'OTC',full:'Over the Counter',cat:'pharmacy',def:'Medications available without a prescription, such as acetaminophen, ibuprofen, and antacids.',usage:'Trial OTC loratadine for seasonal allergies before starting Rx.',related:["Rx","PRN","PO"]},
-{term:'DAW',full:'Dispense as Written',cat:'pharmacy',def:'Instruction telling the pharmacist to dispense the exact brand-name drug prescribed with no generic substitution.',usage:'DAW: Brand Synthroid required; no generic substitution.',related:["Rx","NR"]},
-{term:'NR',full:'No Refills',cat:'pharmacy',def:'Notation on a prescription indicating it cannot be refilled without a new prescription.',usage:'Oxycodone 5mg #30, NR.',related:["Rx","DAW","PRN"]},
-{term:'MDI',full:'Metered-Dose Inhaler',cat:'pharmacy',def:'A handheld device delivering a specific medication dose as a spray inhaled into the lungs.',usage:'Albuterol MDI 2 puffs PRN SOB/wheeze.',related:["COPD","SOB","PRN"]},
-{term:'mg',full:'Milligram',cat:'pharmacy',def:'Unit of weight equal to 1/1000 of a gram. The most common unit for medication dosing.',usage:'Metoprolol 25mg PO BID.',related:["mcg","g","mEq","mL"]},
-{term:'mcg',full:'Microgram',cat:'pharmacy',def:'Unit of weight equal to 1/1000000 of a gram. Used for very potent medications like levothyroxine and fentanyl.',usage:'Levothyroxine 50 mcg PO QD.',related:["mg","g","TSH"]},
-{term:'mEq',full:'Milliequivalent',cat:'pharmacy',def:'A unit for electrolytes like potassium and sodium accounting for both amount and electrical charge.',usage:'Potassium chloride 40 mEq IV over 4 hours.',related:["mg","K","Na"]},
-{term:'NSAID',full:'Non-Steroidal Anti-Inflammatory Drug',cat:'pharmacy',def:'A class of pain relievers that reduce inflammation. Examples include ibuprofen, naproxen, and aspirin.',usage:'Avoid NSAIDs given history of GI bleed. Use acetaminophen instead.',related:["PRN","PO","GERD","OTC"]},
-{term:'PICC',full:'Peripherally Inserted Central Catheter',cat:'pharmacy',def:'A long thin tube inserted into a vein in the arm and advanced near the heart. Used for long-term IV medications.',usage:'PICC line placed for 6-week course of IV antibiotics.',related:["IV","SQ","IM"]},
-{term:'MI',full:'Myocardial Infarction',cat:'cardiology',def:'A heart attack. Occurs when blood flow to part of the heart is blocked long enough to cause permanent damage to the heart muscle.',usage:'Patient transferred to cath lab for STEMI, confirmed MI.',related:["ACS","STEMI","NSTEMI","CAD","EKG"]},
-{term:'ACS',full:'Acute Coronary Syndrome',cat:'cardiology',def:'An umbrella term for conditions where blood flow to the heart is suddenly reduced, including heart attacks and unstable angina.',usage:'ACS protocol activated. Serial EKGs and troponins ordered.',related:["MI","STEMI","NSTEMI","CAD"]},
-{term:'STEMI',full:'ST-Elevation Myocardial Infarction',cat:'cardiology',def:'A severe heart attack showing ST elevation on EKG indicating a major artery is completely blocked. A medical emergency.',usage:'STEMI alert, cath lab activated. PCI completed.',related:["MI","NSTEMI","EKG","ACS"]},
-{term:'NSTEMI',full:'Non-ST-Elevation Myocardial Infarction',cat:'cardiology',def:'A heart attack without ST elevation on EKG, typically involving partial artery blockage.',usage:'Troponin elevated. EKG without ST changes. NSTEMI diagnosis.',related:["STEMI","MI","ACS","EKG"]},
-{term:'CHF',full:'Congestive Heart Failure',cat:'cardiology',def:'A condition where the heart cannot pump efficiently, causing fluid to back up into the lungs and body tissues.',usage:'Patient admitted with acute CHF exacerbation. CXR shows pulmonary edema.',related:["EF","BNP","SOB","DOE","HTN"]},
-{term:'CAD',full:'Coronary Artery Disease',cat:'cardiology',def:'Narrowing or blockage of the heart\'s blood vessels due to plaque buildup, increasing risk of heart attack.',usage:'PMH significant for CAD, prior stent placement 2018.',related:["MI","ACS","HTN","HLD"]},
-{term:'HTN',full:'Hypertension',cat:'cardiology',def:'High blood pressure. Consistently elevated readings above 130/80 mmHg. A major risk factor for heart attack, stroke, and kidney disease.',usage:'PMH: HTN, managed on lisinopril 10mg QD.',related:["BP","CAD","CVA","DM"]},
-{term:'HLD',full:'Hyperlipidemia',cat:'cardiology',def:'Abnormally high levels of fats in the blood including LDL cholesterol and triglycerides. A major risk factor for CAD.',usage:'HLD managed with atorvastatin 40mg QD.',related:["LDL","HDL","TG","CAD"]},
-{term:'A-Fib',full:'Atrial Fibrillation',cat:'cardiology',def:'An irregular, often rapid heart rhythm originating in the upper chambers. Increases stroke risk significantly.',usage:'New onset A-Fib with RVR. Rate controlled with metoprolol.',related:["EKG","HR","DVT","INR"]},
-{term:'EKG',full:'Electrocardiogram',cat:'cardiology',def:'A test recording the electrical activity of the heart using skin electrodes. Detects arrhythmias and heart attacks.',usage:'12-lead EKG obtained. ST elevations in V1-V4.',related:["MI","A-Fib","HR","STEMI"]},
-{term:'ECHO',full:'Echocardiogram',cat:'cardiology',def:'An ultrasound of the heart showing its structure and function. Used to assess pumping function, valve disease, and pericardial fluid.',usage:'TTE ECHO ordered to assess EF and valve function.',related:["EF","CHF","MI"]},
-{term:'EF',full:'Ejection Fraction',cat:'cardiology',def:'The percentage of blood pumped out of the left ventricle with each beat. Normal is 55-70%. Below 40% indicates reduced function.',usage:'ECHO: EF estimated at 35%, consistent with HFrEF.',related:["ECHO","CHF","BNP"]},
-{term:'BNP',full:'B-Type Natriuretic Peptide',cat:'cardiology',def:'A hormone released by the heart when under stress. Elevated BNP is a strong marker for heart failure.',usage:'BNP 850 pg/mL, elevated, consistent with CHF exacerbation.',related:["CHF","EF","SOB"]},
-{term:'DVT',full:'Deep Vein Thrombosis',cat:'cardiology',def:'A blood clot in a deep vein, usually in the leg. Can travel to the lungs as a pulmonary embolism.',usage:'Bilateral leg swelling. US confirms left lower extremity DVT.',related:["PE","INR","A-Fib"]},
-{term:'BP',full:'Blood Pressure',cat:'cardiology',def:'The pressure of blood against artery walls, recorded as systolic over diastolic in mmHg.',usage:'BP 154/96, above goal. Uptitrate amlodipine.',related:["HTN","HR","VS","MAP"]},
-{term:'HR',full:'Heart Rate',cat:'cardiology',def:'The number of times the heart beats per minute. Normal resting rate is 60-100 bpm.',usage:'HR 112, tachycardic. EKG ordered.',related:["BP","VS","EKG","A-Fib"]},
-{term:'PVD',full:'Peripheral Vascular Disease',cat:'cardiology',def:'Narrowing of blood vessels outside the heart and brain, usually in the legs. Causes pain with walking.',usage:'PVD confirmed on ABI testing. Vascular surgery referral placed.',related:["CAD","HTN","DM","HLD"]},
-{term:'MAP',full:'Mean Arterial Pressure',cat:'cardiology',def:'The average blood pressure in the arteries during one cardiac cycle. A MAP above 65 mmHg is needed to maintain organ perfusion.',usage:'MAP 58, below goal. IV fluids and vasopressors initiated.',related:["BP","ICU","VS"]},
-{term:'CBC',full:'Complete Blood Count',cat:'labs',def:'A blood test measuring red cells, white cells, hemoglobin, hematocrit, and platelets. One of the most commonly ordered lab tests.',usage:'CBC ordered. WBC 12.4, Hgb 11.2, Plt 210.',related:["WBC","Hgb","Hct","Plt"]},
-{term:'BMP',full:'Basic Metabolic Panel',cat:'labs',def:'A blood test measuring 8 key values: sodium, potassium, chloride, bicarbonate, BUN, creatinine, glucose, and calcium.',usage:'BMP shows Na 138, K 3.8, Cr 1.1, BUN 18, glucose 110.',related:["CMP","BUN","Cr","Na","K"]},
-{term:'CMP',full:'Comprehensive Metabolic Panel',cat:'labs',def:'The BMP plus liver function tests. Provides a broad picture of metabolic and organ health.',usage:'CMP ordered as part of annual wellness labs.',related:["BMP","LFT","BUN","Cr"]},
-{term:'TSH',full:'Thyroid-Stimulating Hormone',cat:'labs',def:'A pituitary hormone regulating thyroid function. High TSH suggests hypothyroidism; low TSH suggests hyperthyroidism.',usage:'TSH 6.8 (high), consistent with hypothyroidism. Start levothyroxine.',related:["T4","mcg","QD"]},
-{term:'HbA1c',full:'Hemoglobin A1c',cat:'labs',def:'A blood test reflecting average blood sugar levels over 2-3 months. Goal typically below 7% for most diabetics.',usage:'HbA1c 8.2%, above goal. Adjust metformin dosing.',related:["DM","BMP"]},
-{term:'PSA',full:'Prostate-Specific Antigen',cat:'labs',def:'A protein produced by the prostate. Elevated levels may indicate prostate cancer, benign enlargement, or inflammation.',usage:'PSA 5.8, elevated. Urology referral placed.',related:["Bx"]},
-{term:'WBC',full:'White Blood Cell Count',cat:'labs',def:'Measures infection-fighting cells in the blood. Elevated WBC may indicate infection; low WBC may suggest immune suppression.',usage:'WBC 14.2, elevated, concern for infection.',related:["CBC","Hgb","Plt"]},
-{term:'Hgb',full:'Hemoglobin',cat:'labs',def:'The protein in red blood cells that carries oxygen. Low hemoglobin indicates anemia. Normal is roughly 12-17 g/dL.',usage:'Hgb 9.4, low, consistent with moderate anemia.',related:["CBC","Hct"]},
-{term:'Hct',full:'Hematocrit',cat:'labs',def:'The percentage of blood volume made up of red blood cells. Low hematocrit indicates anemia.',usage:'Hct 28%, low. Transfusion threshold discussion with patient.',related:["Hgb","CBC"]},
-{term:'Plt',full:'Platelets',cat:'labs',def:'Tiny blood cells that help form clots. Normal range is 150000-400000 per microliter. Low platelets increase bleeding risk.',usage:'Plt 88000, thrombocytopenic. Hold anticoagulation.',related:["CBC","INR"]},
-{term:'INR',full:'International Normalized Ratio',cat:'labs',def:'A standardized measure of clotting time used to monitor warfarin therapy. Normal is around 1.0; therapeutic range usually 2.0-3.0.',usage:'INR 3.8, supratherapeutic. Hold warfarin x1 dose.',related:["PT","Plt","A-Fib","DVT"]},
-{term:'BUN',full:'Blood Urea Nitrogen',cat:'labs',def:'A waste product filtered by the kidneys. Elevated BUN may indicate dehydration, kidney dysfunction, or high protein breakdown.',usage:'BUN 42, Cr 2.1, elevated. Concern for AKI.',related:["Cr","eGFR","BMP"]},
-{term:'Cr',full:'Creatinine',cat:'labs',def:'A waste product from muscle metabolism filtered by the kidneys. Elevated creatinine is a key indicator of reduced kidney function.',usage:'Creatinine trending up from 0.9 to 1.4 to 2.1 over 3 days.',related:["BUN","eGFR","BMP"]},
-{term:'eGFR',full:'Estimated Glomerular Filtration Rate',cat:'labs',def:'An estimate of how well the kidneys filter blood. Below 60 mL/min indicates chronic kidney disease.',usage:'eGFR 42, CKD Stage 3b. Nephrology follow-up recommended.',related:["Cr","BUN","CKD"]},
-{term:'LDL',full:'Low-Density Lipoprotein',cat:'labs',def:'Bad cholesterol. High LDL increases risk of artery plaque. Target typically below 100 mg/dL for high-risk patients.',usage:'LDL 148, above goal. Initiate statin therapy.',related:["HDL","TG","CAD","HLD"]},
-{term:'HDL',full:'High-Density Lipoprotein',cat:'labs',def:'Good cholesterol. Higher HDL levels are associated with reduced cardiovascular risk.',usage:'HDL 38, low. Lifestyle counseling provided.',related:["LDL","TG","HLD","CAD"]},
-{term:'CRP',full:'C-Reactive Protein',cat:'labs',def:'A protein produced by the liver in response to inflammation or infection. Elevated CRP indicates active inflammation.',usage:'hs-CRP 8.4, markedly elevated. Blood cultures obtained.',related:["ESR","WBC"]},
-{term:'PT',full:'Prothrombin Time',cat:'labs',def:'Measures how long blood takes to clot. Used to monitor warfarin therapy.',usage:'PT 32 seconds (INR 2.8), therapeutic on warfarin.',related:["INR","Plt"]},
-{term:'TG',full:'Triglycerides',cat:'labs',def:'A type of fat in the blood. High triglycerides alongside low HDL and high LDL increase cardiovascular risk.',usage:'TG 320, significantly elevated. Dietary counseling and fish oil recommended.',related:["LDL","HDL","HLD","CAD"]},
-{term:'ESR',full:'Erythrocyte Sedimentation Rate',cat:'labs',def:'A blood test measuring how quickly red blood cells settle. Elevated ESR indicates inflammation or infection.',usage:'ESR 88 mm/hr, elevated. Consistent with inflammatory process.',related:["CRP","WBC"]},
-{term:'Na',full:'Sodium',cat:'labs',def:'The main electrolyte in blood and body fluids. Normal range is 135-145 mEq/L. Low sodium causes confusion and seizures.',usage:'Na 128, hyponatremia. Fluid restriction initiated.',related:["K","BMP","CMP"]},
-{term:'K',full:'Potassium',cat:'labs',def:'An electrolyte critical for heart and muscle function. Normal range is 3.5-5.0 mEq/L. Abnormal levels can cause dangerous heart rhythms.',usage:'K 2.9, low. IV potassium replacement ordered.',related:["Na","BMP","EKG","mEq"]},
-{term:'CPR',full:'Cardiopulmonary Resuscitation',cat:'emergency',def:'An emergency procedure combining chest compressions and rescue breaths to restore circulation after cardiac arrest.',usage:'Patient found unresponsive. CPR initiated by nursing staff.',related:["AED","DNR","ICU"]},
-{term:'AED',full:'Automated External Defibrillator',cat:'emergency',def:'A portable device that analyzes heart rhythm and delivers an electric shock to restore a normal heartbeat.',usage:'AED applied. Shock advised. V-fib terminated after 1 shock.',related:["CPR"]},
-{term:'ICU',full:'Intensive Care Unit',cat:'emergency',def:'A specialized hospital unit providing continuous monitoring and advanced life support for critically ill patients.',usage:'Patient transferred to ICU for management of septic shock.',related:["NICU","CPR"]},
-{term:'ER',full:'Emergency Room',cat:'emergency',def:'The hospital department providing immediate treatment for urgent or life-threatening medical conditions. Also called ED.',usage:'Patient presenting to ER via EMS with altered mental status.',related:["EMS","ICU"]},
-{term:'EMS',full:'Emergency Medical Services',cat:'emergency',def:'Pre-hospital emergency care including paramedics and EMTs who respond to 911 calls.',usage:'EMS reports patient found unconscious at home, GCS 6 on arrival.',related:["ER","CPR"]},
-{term:'GSW',full:'Gunshot Wound',cat:'emergency',def:'A wound caused by a firearm projectile. Documented with location, entry and exit wound details, and trajectory.',usage:'Trauma activation: GSW to right chest. BP 74/48 on arrival.',related:["MVC","OR"]},
-{term:'MVC',full:'Motor Vehicle Crash',cat:'emergency',def:'An injury from a car, truck, or motorcycle accident. Used to describe the mechanism of injury.',usage:'MVC at high speed. C-spine precautions maintained.',related:["GSW","OR","TBI"]},
-{term:'LOC',full:'Loss of Consciousness',cat:'emergency',def:'A period of unresponsiveness. Can be caused by head injury, seizure, cardiac events, or metabolic disturbances.',usage:'Witnessed LOC x 2 minutes at gym. GCS now 15.',related:["GCS","TBI","A&O"]},
-{term:'GCS',full:'Glasgow Coma Scale',cat:'emergency',def:'A scoring system from 3-15 assessing consciousness based on eye opening, verbal response, and motor response. Below 8 usually requires intubation.',usage:'GCS 7 on arrival (E2V2M3). Intubation performed.',related:["LOC","A&O","TBI","ICU"]},
-{term:'TBI',full:'Traumatic Brain Injury',cat:'emergency',def:'Brain damage caused by an external force. Ranges from mild concussion to severe coma.',usage:'CT head: epidural hematoma. Neurosurgery activated.',related:["GCS","LOC","MVC"]},
-{term:'Sepsis',full:'Sepsis',cat:'emergency',def:'A life-threatening organ dysfunction caused by a dysregulated immune response to infection. Requires immediate antibiotics and IV fluids.',usage:'Sepsis protocol initiated. Blood cultures x2, IV fluids, broad-spectrum antibiotics.',related:["ICU","WBC","CRP","MAP","BP"]},
-{term:'PE',full:'Pulmonary Embolism',cat:'emergency',def:'A blood clot that travels to the lungs, blocking blood flow. Causes sudden SOB, chest pain, and low oxygen. A medical emergency.',usage:'CTA chest confirms bilateral PE. Heparin drip started.',related:["DVT","SOB","CP","INR"]},
-{term:'TIA',full:'Transient Ischemic Attack',cat:'neurology',def:'A mini-stroke. Brief neurological symptoms from temporary reduced brain blood flow that resolve within 24 hours without permanent damage.',usage:'TIA 3 days ago: slurred speech x 15 min, resolved fully.',related:["CVA","MRI","A-Fib","HTN"]},
-{term:'CVA',full:'Cerebrovascular Accident',cat:'neurology',def:'A stroke. Permanent brain damage from either a blocked artery (ischemic) or a ruptured blood vessel (hemorrhagic).',usage:'CVA confirmed on MRI. tPA administered within 3-hour window.',related:["TIA","MRI","HTN","A-Fib"]},
-{term:'MS',full:'Multiple Sclerosis',cat:'neurology',def:'A chronic autoimmune disease where the immune system attacks the protective myelin sheath around nerve fibers.',usage:'MS diagnosed at age 32. Currently on interferon therapy.',related:["MRI"]},
-{term:'PD',full:'Parkinson\'s Disease',cat:'neurology',def:'A progressive nervous system disorder affecting movement, causing tremors, stiffness, and slowed movement.',usage:'PD diagnosis confirmed. Initiating carbidopa-levodopa therapy.',related:["MRI"]},
-{term:'ALS',full:'Amyotrophic Lateral Sclerosis',cat:'neurology',def:'A progressive neurodegenerative disease affecting nerve cells controlling voluntary muscles. Also known as Lou Gehrig\'s disease.',usage:'ALS confirmed on EMG and clinical evaluation. Neurology follow-up established.',related:["EMG"]},
-{term:'EEG',full:'Electroencephalogram',cat:'neurology',def:'A test measuring electrical activity in the brain using electrodes placed on the scalp. Used to diagnose seizures and epilepsy.',usage:'EEG obtained. Spike-wave discharges consistent with absence seizures.',related:["MRI"]},
-{term:'COPD',full:'Chronic Obstructive Pulmonary Disease',cat:'pulmonary',def:'Progressive lung diseases mainly emphysema and chronic bronchitis causing airflow limitation. Strongly associated with smoking.',usage:'COPD exacerbation. Start prednisone, azithromycin, and nebulized albuterol.',related:["SOB","MDI","SpO2","BiPAP","ABG"]},
-{term:'PNA',full:'Pneumonia',cat:'pulmonary',def:'An infection of the lung tissue causing inflammation and fluid accumulation. Can be bacterial, viral, or fungal.',usage:'CXR confirms right lower lobe PNA. Admit for IV antibiotics.',related:["SOB","WBC","CXR"]},
-{term:'SpO2',full:'Peripheral Oxygen Saturation',cat:'pulmonary',def:'The percentage of hemoglobin carrying oxygen, measured with a pulse oximeter. Normal is 95-100%.',usage:'SpO2 88% on room air. Supplemental O2 started.',related:["ABG","SOB","COPD","BiPAP"]},
-{term:'ABG',full:'Arterial Blood Gas',cat:'pulmonary',def:'A blood test measuring oxygen, carbon dioxide, and pH levels. Used to assess respiratory and metabolic function precisely.',usage:'ABG: pH 7.28, pCO2 58, pO2 56. Hypercapnic respiratory failure.',related:["SpO2","BiPAP","COPD"]},
-{term:'CPAP',full:'Continuous Positive Airway Pressure',cat:'pulmonary',def:'A device delivering continuous pressurized air to keep airways open during sleep. Primary treatment for sleep apnea.',usage:'CPAP 10 cmH2O prescribed for moderate OSA.',related:["BiPAP","OSA","SpO2"]},
-{term:'BiPAP',full:'Bilevel Positive Airway Pressure',cat:'pulmonary',def:'Non-invasive ventilation delivering two levels of air pressure. Used for COPD exacerbations and respiratory failure.',usage:'BiPAP initiated for hypercapnic respiratory failure.',related:["CPAP","ABG","COPD","DNI"]},
-{term:'URI',full:'Upper Respiratory Infection',cat:'pulmonary',def:'An infection of the upper airways including nose, sinuses, and throat. Usually viral. Rarely requires antibiotics.',usage:'URI x 5 days. Symptomatic treatment only.',related:["PNA","WBC"]},
-{term:'OSA',full:'Obstructive Sleep Apnea',cat:'pulmonary',def:'A sleep disorder where the throat repeatedly collapses during sleep, causing breathing to stop and start. Treated with CPAP.',usage:'OSA diagnosed on sleep study. AHI 28/hr, moderate severity. CPAP ordered.',related:["CPAP","BiPAP","SpO2","HTN"]},
-{term:'CXR',full:'Chest X-Ray',cat:'pulmonary',def:'An imaging test using X-rays to visualize the heart, lungs, and chest structures. One of the most commonly ordered imaging studies.',usage:'CXR: bilateral infiltrates consistent with pulmonary edema.',related:["PNA","CHF"]},
-{term:'OR',full:'Operating Room',cat:'surgical',def:'The sterile hospital room where surgical procedures are performed under anesthesia.',usage:'Patient taken to OR for emergency appendectomy.',related:["PACU","GA"]},
-{term:'PACU',full:'Post-Anesthesia Care Unit',cat:'surgical',def:'The recovery room where patients are monitored immediately after surgery until stable enough for transfer.',usage:'Patient in PACU x 90 minutes post-op. VS stable.',related:["OR","GA","VS"]},
-{term:'GA',full:'General Anesthesia',cat:'surgical',def:'A medically induced state of unconsciousness using IV drugs and/or inhaled gases for surgery.',usage:'Procedure performed under GA without complications.',related:["LA","OR","PACU"]},
-{term:'LA',full:'Local Anesthesia',cat:'surgical',def:'Numbing of a small specific body area. Patient remains fully conscious.',usage:'I&D performed under LA. No complications.',related:["GA","OR"]},
-{term:'I&D',full:'Incision and Drainage',cat:'surgical',def:'A minor surgical procedure to drain pus from an abscess or infected wound by making a small cut.',usage:'I&D performed on right forearm abscess under LA. Packed with gauze.',related:["LA","WBC"]},
-{term:'EOB',full:'Explanation of Benefits',cat:'billing',def:'A document from your insurance after a claim is processed showing what was billed, what insurance paid, and what you owe. It is NOT a bill.',usage:'EOB received showing $0 patient responsibility after adjustment.',related:["CPT","ICD","OOP"]},
-{term:'CPT',full:'Current Procedural Terminology',cat:'billing',def:'A standardized system of 5-digit codes describing medical and surgical procedures for billing insurance.',usage:'CPT code 99213 billed for office visit; CPT 36415 for blood draw.',related:["EOB","ICD","NPI"]},
-{term:'ICD',full:'International Classification of Diseases',cat:'billing',def:'Alphanumeric codes classifying diagnoses on medical claims. ICD-10 is the current US standard.',usage:'Primary ICD-10 diagnosis: J18.9 (Pneumonia, unspecified).',related:["CPT","EOB","Dx"]},
-{term:'NPI',full:'National Provider Identifier',cat:'billing',def:'A unique 10-digit number assigned to every healthcare provider in the US, used for billing and identification.',usage:'Verify ordering physician NPI before submitting prior authorization.',related:["CPT","EOB","PCP"]},
-{term:'PCP',full:'Primary Care Provider',cat:'billing',def:'Your main healthcare provider who gives routine care and coordinates specialist referrals.',usage:'Referral from PCP required before specialist visit under HMO plan.',related:["HMO","PPO","NPI"]},
-{term:'HMO',full:'Health Maintenance Organization',cat:'billing',def:'A health insurance plan requiring patients to use network providers and get referrals from their PCP for specialists.',usage:'Patient HMO plan requires PCP referral for cardiology.',related:["PPO","PCP","EOB"]},
-{term:'PPO',full:'Preferred Provider Organization',cat:'billing',def:'A health insurance plan allowing patients to see specialists without referrals and use out-of-network providers at higher cost.',usage:'PPO plan allows direct specialist access without referral.',related:["HMO","EOB","OOP"]},
-{term:'OOP',full:'Out of Pocket',cat:'billing',def:'The amount you pay directly for healthcare not covered by insurance, including deductibles, copays, and coinsurance.',usage:'OOP maximum $6500 met. Insurance covers 100% of remaining costs.',related:["EOB","HMO","PPO"]},
-{term:'HSA',full:'Health Savings Account',cat:'billing',def:'A tax-advantaged savings account paired with a high-deductible health plan letting you set aside pre-tax money for medical expenses.',usage:'Using HSA funds for lab work and prescription copays.',related:["FSA","OOP"]},
-{term:'FSA',full:'Flexible Spending Account',cat:'billing',def:'An employer-sponsored account allowing pre-tax contributions for qualifying medical expenses. Funds typically must be used within the plan year.',usage:'FSA deadline December 31. Use remaining balance for eligible expenses.',related:["HSA","OOP"]},
-{term:'PA',full:'Prior Authorization',cat:'billing',def:'Approval from your insurance company required before certain medications, procedures, or specialist visits are covered.',usage:'PA required for MRI. Submitted clinical notes to support medical necessity.',related:["EOB","CPT","HMO","PPO"]},
-{term:'COB',full:'Coordination of Benefits',cat:'billing',def:'The process determining which insurance plan pays first when a patient has more than one health insurance policy.',usage:'COB applied. Primary insurance paid first, secondary covered remaining balance.',related:["EOB","OOP"]},
-{term:'ROM',full:'Range of Motion',cat:'orthopedics',def:'The full movement potential of a joint. Measured in degrees and used to track recovery after injury or surgery.',usage:'ROM improved from 45 to 110 degrees flexion after PT.',related:["PT","OT","ACL","TKA"]},
-{term:'ACL',full:'Anterior Cruciate Ligament',cat:'orthopedics',def:'One of the major ligaments in the knee. ACL tears are among the most common sports injuries and often require surgery.',usage:'MRI confirms complete ACL tear. Ortho referral for surgical evaluation.',related:["MCL","PCL","ROM","PT"]},
-{term:'MCL',full:'Medial Collateral Ligament',cat:'orthopedics',def:'A ligament on the inner side of the knee that stabilizes the joint. Injuries are graded 1-3 based on severity.',usage:'Grade 2 MCL sprain. Conservative management with bracing and PT.',related:["ACL","PCL","ROM"]},
-{term:'TKA',full:'Total Knee Arthroplasty',cat:'orthopedics',def:'Knee replacement surgery replacing damaged cartilage and bone with artificial components.',usage:'TKA scheduled for right knee. Pre-op clearance obtained.',related:["THA","ROM","PT"]},
-{term:'THA',full:'Total Hip Arthroplasty',cat:'orthopedics',def:'Hip replacement surgery replacing the damaged hip joint with a prosthetic implant.',usage:'THA performed without complications. PT initiated post-op day 1.',related:["TKA","ROM","PT"]},
-{term:'OA',full:'Osteoarthritis',cat:'orthopedics',def:'A degenerative joint disease caused by breakdown of cartilage over time. Most common in knees, hips, and hands.',usage:'Bilateral knee OA on X-ray. Conservative management with NSAIDs and PT.',related:["RA","TKA","ROM","NSAID"]},
-{term:'Fx',full:'Fracture',cat:'orthopedics',def:'A broken bone. Classified by type including hairline, displaced, comminuted, or stress fractures.',usage:'X-ray: transverse Fx mid-shaft right tibia. Ortho consult placed.',related:["ORIF"]},
-{term:'ORIF',full:'Open Reduction Internal Fixation',cat:'orthopedics',def:'Surgery to repair a broken bone by realigning fragments and securing them with hardware such as plates, screws, or rods.',usage:'ORIF performed for displaced femur Fx. Hardware well-positioned on post-op X-ray.',related:["Fx","OR"]},
-{term:'DJD',full:'Degenerative Joint Disease',cat:'orthopedics',def:'Another term for osteoarthritis. Progressive breakdown of joint cartilage causing pain and loss of function.',usage:'Lumbar DJD noted on MRI. Physical therapy and NSAIDs recommended.',related:["OA","ROM","PT","NSAID"]},
-{term:'LBP',full:'Low Back Pain',cat:'orthopedics',def:'Pain in the lumbar spine region. One of the most common reasons patients visit a doctor. Can be acute or chronic.',usage:'LBP x 3 weeks. No red flags. Conservative treatment initiated.',related:["DJD","PT","NSAID"]},
-{term:'HNP',full:'Herniated Nucleus Pulposus',cat:'orthopedics',def:'A slipped or herniated disc. Soft inner disc material pushes through the outer layer, potentially pressing on nearby nerves.',usage:'MRI lumbar: HNP at L4-L5 with nerve root compression.',related:["LBP","PT"]},
-{term:'EMG',full:'Electromyography',cat:'orthopedics',def:'A diagnostic test measuring electrical activity of muscles and the nerves controlling them. Used to diagnose nerve and muscle disorders.',usage:'EMG/NCS ordered to evaluate peripheral neuropathy.',related:["ALS"]},
-{term:'PRICE',full:'Protection Rest Ice Compression Elevation',cat:'orthopedics',def:'The standard first-aid protocol for acute musculoskeletal injuries to reduce pain and swelling.',usage:'PRICE protocol initiated for acute ankle sprain.',related:["ROM","NSAID","PT"]},
-{term:'PT',full:'Physical Therapy',cat:'orthopedics',def:'Rehabilitation treatment using exercises and hands-on techniques to restore strength, mobility, and function after injury or surgery.',usage:'PT ordered 3x per week for 6 weeks following TKA.',related:["OT","ROM","TKA","THA"]},
-{term:'OT',full:'Occupational Therapy',cat:'orthopedics',def:'Therapy focused on helping patients regain the ability to perform daily activities after injury, illness, or disability.',usage:'OT consult placed for ADL training after CVA.',related:["PT","ROM","CVA"]},
-{term:'GERD',full:'Gastroesophageal Reflux Disease',cat:'gastro',def:'Chronic acid reflux where stomach acid flows back into the esophagus, causing heartburn and potential esophageal damage.',usage:'GERD managed with omeprazole 20mg PO QD.',related:["PPI","EGD","H.pylori"]},
-{term:'PPI',full:'Proton Pump Inhibitor',cat:'gastro',def:'A class of medications reducing stomach acid production. Includes omeprazole, pantoprazole, and esomeprazole.',usage:'Start PPI therapy: pantoprazole 40mg PO QD before breakfast.',related:["GERD","EGD","H.pylori"]},
-{term:'EGD',full:'Esophagogastroduodenoscopy',cat:'gastro',def:'Upper endoscopy. A camera procedure examining the esophagus, stomach, and first part of the small intestine.',usage:'EGD performed. Mild gastritis noted. H. pylori biopsy taken.',related:["GERD","H.pylori","GI"]},
-{term:'IBD',full:'Inflammatory Bowel Disease',cat:'gastro',def:'Chronic inflammatory conditions of the digestive tract, including Crohn\'s disease and ulcerative colitis.',usage:'IBD flare confirmed. GI consult placed. Start mesalamine.',related:["UC","CD","GI","CRP"]},
-{term:'UC',full:'Ulcerative Colitis',cat:'gastro',def:'A type of IBD causing chronic inflammation and ulcers in the colon and rectum. Causes bloody diarrhea and abdominal pain.',usage:'UC diagnosed on colonoscopy. Starting mesalamine therapy.',related:["IBD","CD","GI"]},
-{term:'CD',full:'Crohn\'s Disease',cat:'gastro',def:'A type of IBD that can affect any part of the digestive tract. Causes inflammation, abdominal pain, diarrhea, and weight loss.',usage:'CD confirmed. Biologic therapy (adalimumab) initiated.',related:["IBD","UC","GI","CRP"]},
-{term:'IBS',full:'Irritable Bowel Syndrome',cat:'gastro',def:'A functional GI disorder causing abdominal pain, bloating, and altered bowel habits without structural damage.',usage:'IBS-D diagnosed after ruling out IBD. Dietary modifications recommended.',related:["IBD","GERD","GI"]},
-{term:'GI',full:'Gastrointestinal',cat:'gastro',def:'Relating to the digestive system from the mouth through the intestines and rectum.',usage:'GI consult placed for evaluation of upper GI bleed.',related:["EGD","IBD","GERD"]},
-{term:'LFT',full:'Liver Function Tests',cat:'gastro',def:'Blood tests measuring liver enzymes and proteins to assess liver health and detect damage.',usage:'LFTs elevated. ALT 3x normal. Hepatology referral placed.',related:["CMP","ALT","AST"]},
-{term:'ALT',full:'Alanine Aminotransferase',cat:'gastro',def:'A liver enzyme released when liver cells are damaged. Elevated ALT is a sensitive marker of liver injury.',usage:'ALT 210 U/L, significantly elevated.',related:["AST","LFT","CMP"]},
-{term:'AST',full:'Aspartate Aminotransferase',cat:'gastro',def:'An enzyme found in the liver, heart, and muscles. Elevated alongside ALT suggests liver damage.',usage:'AST 180, ALT 210. Pattern consistent with hepatocellular injury.',related:["ALT","LFT","CMP"]},
-{term:'ETOH',full:'Ethanol or Alcohol',cat:'gastro',def:'Medical shorthand for alcohol. Used in documentation of alcohol use history or alcohol-related conditions.',usage:'SH: ETOH use 2-3 drinks per day. LFTs elevated, likely ETOH-related.',related:["LFT","ALT","SH"]},
-{term:'BRBPR',full:'Bright Red Blood Per Rectum',cat:'gastro',def:'Fresh bright red blood from the rectum, indicating bleeding in the lower GI tract such as hemorrhoids or colon lesions.',usage:'BRBPR x 2 days. Colonoscopy ordered urgently.',related:["GI","Hgb","CBC"]},
-{term:'H.pylori',full:'Helicobacter Pylori',cat:'gastro',def:'A bacterial infection of the stomach lining causing ulcers and increasing stomach cancer risk. Treated with antibiotics and a PPI.',usage:'H. pylori positive on breath test. Triple therapy initiated.',related:["GERD","PPI","EGD"]},
-{term:'NGT',full:'Nasogastric Tube',cat:'gastro',def:'A tube inserted through the nose into the stomach. Used for feeding, medication delivery, or stomach decompression.',usage:'NGT placed for bowel decompression. Output 800mL overnight.',related:["NPO","PO","IV"]},
-{term:'CA',full:'Cancer or Carcinoma',cat:'oncology',def:'An abbreviation for cancer generally or carcinoma, a cancer arising from epithelial cells. Context determines meaning.',usage:'CA colon diagnosed stage IIIB. Oncology referral placed.',related:["Chemo","XRT","Mets","Bx"]},
-{term:'Chemo',full:'Chemotherapy',cat:'oncology',def:'Treatment using chemical agents to kill or slow the growth of cancer cells. Given IV or orally in cycles.',usage:'Chemo cycle 3 of 6 completed. Next cycle in 3 weeks.',related:["XRT","CA","Mets","CBC"]},
-{term:'XRT',full:'Radiation Therapy',cat:'oncology',def:'Treatment using high-energy radiation to destroy cancer cells or shrink tumors. Used alone or with chemotherapy.',usage:'XRT to right breast completed. 25 fractions total.',related:["Chemo","CA","Mets"]},
-{term:'Mets',full:'Metastases',cat:'oncology',def:'The spread of cancer from the original site to other parts of the body through blood or lymph system.',usage:'CT chest and abdomen: liver Mets confirmed. Stage IV disease.',related:["CA","Chemo","XRT"]},
-{term:'Bx',full:'Biopsy',cat:'oncology',def:'The removal of a small tissue sample for laboratory examination to determine if cancer or other disease is present.',usage:'Breast Bx performed. Pathology pending.',related:["CA","Dx"]},
-{term:'CR',full:'Complete Remission',cat:'oncology',def:'No detectable signs of cancer after treatment. Does not mean cured, as cancer may still be present at an undetectable level.',usage:'PET scan shows CR after 6 cycles of chemotherapy.',related:["CA","Chemo","PR"]},
-{term:'PR',full:'Partial Remission',cat:'oncology',def:'A significant reduction in cancer size or extent after treatment, but cancer is still detectable.',usage:'CT confirms PR. Tumor reduced by 40%. Continue current regimen.',related:["CR","CA","Chemo"]},
-{term:'PET',full:'Positron Emission Tomography',cat:'oncology',def:'An imaging scan using radioactive tracers to detect cancer, assess how far it has spread, and evaluate treatment response.',usage:'PET scan confirms no new metastatic disease. CR maintained.',related:["Mets","CA"]},
-{term:'TNM',full:'Tumor Node Metastasis',cat:'oncology',def:'The standard system for staging cancer based on tumor size, lymph node involvement, and presence of metastasis.',usage:'Staging: T2N1M0. Stage IIB breast cancer.',related:["CA","Mets","Bx"]},
-{term:'OB',full:'Obstetrics',cat:'obgyn',def:'The branch of medicine dealing with pregnancy, childbirth, and the postpartum period.',usage:'OB consult placed for high-risk pregnancy management.',related:["GYN","L&D","C/S","VBAC"]},
-{term:'GYN',full:'Gynecology',cat:'obgyn',def:'The branch of medicine dealing with the female reproductive system including the uterus, ovaries, and vagina.',usage:'Annual GYN exam scheduled. Pap smear and pelvic exam performed.',related:["OB","Pap","PCOS","IUD"]},
-{term:'LMP',full:'Last Menstrual Period',cat:'obgyn',def:'The first day of a woman\'s most recent menstrual period. Used to calculate gestational age and estimated due date.',usage:'LMP 8 weeks ago. Urine hCG positive. OB ultrasound ordered.',related:["EDD","hCG","OB"]},
-{term:'EDD',full:'Estimated Due Date',cat:'obgyn',def:'The calculated date a pregnant woman is expected to give birth, typically 40 weeks from the first day of the last menstrual period.',usage:'EDD calculated as July 14 based on LMP and early ultrasound.',related:["LMP","OB","L&D"]},
-{term:'C/S',full:'Cesarean Section',cat:'obgyn',def:'Surgical delivery of a baby through incisions in the abdomen and uterus. Also called a C-section.',usage:'Primary C/S performed for failure to progress. Mother and infant stable.',related:["VBAC","L&D","OB"]},
-{term:'VBAC',full:'Vaginal Birth After Cesarean',cat:'obgyn',def:'A vaginal delivery by a woman who has had a previous C-section. Associated with certain risks that are discussed with the provider.',usage:'Patient desires VBAC. Reviewed risks and benefits. Eligible candidate.',related:["C/S","L&D","OB"]},
-{term:'L&D',full:'Labor and Delivery',cat:'obgyn',def:'The hospital unit where women give birth. Also refers to the labor and delivery process itself.',usage:'Patient presenting to L&D at 38 weeks with regular contractions.',related:["OB","C/S","VBAC","EDD"]},
-{term:'PCOS',full:'Polycystic Ovary Syndrome',cat:'obgyn',def:'A hormonal disorder causing enlarged ovaries with small cysts. Leads to irregular periods, excess androgens, and fertility issues.',usage:'PCOS diagnosed. Starting metformin and discussing fertility options.',related:["GYN","OB","DM","HLD"]},
-{term:'hCG',full:'Human Chorionic Gonadotropin',cat:'obgyn',def:'A hormone produced during pregnancy. Elevated hCG confirms pregnancy. Also used to monitor for ectopic pregnancy.',usage:'Serum hCG 1200 mIU/mL. Repeat in 48 hours to confirm appropriate rise.',related:["LMP","EDD","OB"]},
-{term:'GDM',full:'Gestational Diabetes Mellitus',cat:'obgyn',def:'Diabetes that develops during pregnancy due to hormonal changes. Usually resolves after delivery but increases risk of Type 2 DM later.',usage:'GDM diagnosed at 26 weeks. Dietary counseling and glucose monitoring initiated.',related:["DM","HbA1c","OB"]},
-{term:'PIH',full:'Pregnancy-Induced Hypertension',cat:'obgyn',def:'High blood pressure that develops after 20 weeks of pregnancy. Can progress to preeclampsia if not managed.',usage:'BP 148/96 at 32 weeks. PIH diagnosed. Increased monitoring initiated.',related:["HTN","OB","BP","L&D"]},
-{term:'IUD',full:'Intrauterine Device',cat:'obgyn',def:'A small T-shaped device inserted into the uterus by a clinician for long-term contraception. Can be hormonal or copper.',usage:'Mirena IUD placed today. Effective immediately.',related:["GYN","OB"]},
-{term:'Pap',full:'Papanicolaou Smear',cat:'obgyn',def:'A screening test collecting cells from the cervix to detect cervical cancer or precancerous changes. Recommended every 3-5 years.',usage:'Pap smear results: ASCUS. Repeat in 1 year or reflex to HPV testing.',related:["GYN","HPV","CA"]},
-{term:'HPV',full:'Human Papillomavirus',cat:'obgyn',def:'A very common sexually transmitted infection. Certain strains cause cervical cancer; others cause genital warts. A vaccine is available.',usage:'HPV high-risk strain 16/18 detected on co-test. Colposcopy recommended.',related:["Pap","GYN","CA"]},
-{term:'MDD',full:'Major Depressive Disorder',cat:'psych',def:'A mood disorder causing persistent sadness, loss of interest, fatigue, and other symptoms lasting at least 2 weeks. Also called clinical depression.',usage:'MDD diagnosed. Starting sertraline 50mg PO QD. Therapy referral placed.',related:["GAD","SSRI","PHQ9","SI"]},
-{term:'GAD',full:'Generalized Anxiety Disorder',cat:'psych',def:'A mental health condition characterized by persistent, excessive worry about many different things that is difficult to control.',usage:'GAD diagnosed. CBT initiated. Buspirone started for symptom management.',related:["MDD","SSRI"]},
-{term:'SSRI',full:'Selective Serotonin Reuptake Inhibitor',cat:'psych',def:'A class of antidepressants commonly used for depression and anxiety. Examples include sertraline, fluoxetine, and escitalopram.',usage:'SSRI initiated: sertraline 50mg QD. Reassess in 4-6 weeks.',related:["MDD","GAD","SNRI"]},
-{term:'SNRI',full:'Serotonin-Norepinephrine Reuptake Inhibitor',cat:'psych',def:'A class of antidepressants used for depression, anxiety, and chronic pain. Examples include venlafaxine and duloxetine.',usage:'Switched from SSRI to SNRI (duloxetine) for comorbid chronic pain and MDD.',related:["SSRI","MDD","GAD"]},
-{term:'PTSD',full:'Post-Traumatic Stress Disorder',cat:'psych',def:'A mental health condition triggered by experiencing or witnessing a traumatic event. Causes flashbacks, nightmares, and severe anxiety.',usage:'PTSD diagnosed. Trauma-focused CBT initiated. Prazosin for nightmares.',related:["MDD","GAD","SI"]},
-{term:'ADHD',full:'Attention-Deficit Hyperactivity Disorder',cat:'psych',def:'A neurodevelopmental disorder causing inattention, hyperactivity, and impulsivity that interferes with functioning.',usage:'ADHD diagnosed per neuropsych testing. Starting methylphenidate 10mg every morning.',related:["CBT"]},
-{term:'SI',full:'Suicidal Ideation',cat:'psych',def:'Thoughts about or preoccupation with suicide. Documented as active (with plan or intent) or passive (wish to be dead without plan).',usage:'Patient endorses passive SI. No plan or intent. Safety plan reviewed.',related:["MDD","PTSD","HI"]},
-{term:'HI',full:'Homicidal Ideation',cat:'psych',def:'Thoughts about harming or killing another person. Clinicians are required to assess for plan, intent, and specific target.',usage:'Patient denies HI or SI. No safety concerns at this time.',related:["SI","MDD"]},
-{term:'PHQ9',full:'Patient Health Questionnaire-9',cat:'psych',def:'A standardized 9-question screening tool used to diagnose and measure the severity of depression. Scored 0-27.',usage:'PHQ-9 score 18, moderately severe depression. Medication adjustment made.',related:["MDD","GAD","SSRI"]},
-{term:'CBT',full:'Cognitive Behavioral Therapy',cat:'psych',def:'A structured form of psychotherapy that helps patients identify and change negative thought patterns and behaviors.',usage:'CBT initiated weekly for MDD and GAD. Goals set with therapist.',related:["MDD","GAD","PTSD"]},
-{term:'BPD',full:'Borderline Personality Disorder',cat:'psych',def:'A mental health disorder characterized by emotional instability, intense interpersonal relationships, impulsivity, and fear of abandonment.',usage:'BPD diagnosed. DBT therapy initiated. Psychiatry follow-up monthly.',related:["MDD","SI","CBT"]},
-{term:'DBT',full:'Dialectical Behavior Therapy',cat:'psych',def:'A specialized form of CBT designed for people with intense emotional responses. Focuses on mindfulness, distress tolerance, and emotional regulation.',usage:'DBT group and individual therapy started for BPD and chronic SI.',related:["CBT","BPD","MDD"]},
-{term:'NICU',full:'Neonatal Intensive Care Unit',cat:'pediatrics',def:'A specialized ICU for premature or critically ill newborns requiring intensive monitoring and care.',usage:'Infant transferred to NICU for respiratory distress and prematurity at 30 weeks.',related:["ICU","OB","L&D"]},
-{term:'Peds',full:'Pediatrics',cat:'pediatrics',def:'The branch of medicine specializing in the health and medical care of infants, children, and adolescents.',usage:'Peds consult placed for fever workup in 3-month-old.',related:["NICU"]},
-{term:'DTaP',full:'Diphtheria Tetanus Pertussis Vaccine',cat:'pediatrics',def:'A combination vaccine protecting against diphtheria, tetanus, and pertussis (whooping cough). Given in a series starting at 2 months.',usage:'DTaP vaccine administered per immunization schedule at 2-month well-child visit.',related:["MMR","Peds"]},
-{term:'MMR',full:'Measles Mumps Rubella Vaccine',cat:'pediatrics',def:'A combination vaccine protecting against measles, mumps, and rubella. First dose given at 12-15 months.',usage:'MMR #1 given today at 12-month well-child visit.',related:["DTaP","Peds"]},
-{term:'RSV',full:'Respiratory Syncytial Virus',cat:'pediatrics',def:'A common respiratory virus that usually causes mild cold-like symptoms but can be severe in infants and elderly adults.',usage:'RSV bronchiolitis confirmed. Supportive care with O2 and fluids.',related:["Peds","NICU","SpO2","URI"]},
-{term:'FTT',full:'Failure to Thrive',cat:'pediatrics',def:'Inadequate physical growth in a child, defined as weight consistently below the 3rd-5th percentile or significant drop on growth charts.',usage:'FTT noted. Weight dropped from 40th to 10th percentile. Nutrition consult placed.',related:["Peds","NICU","GI"]},
-{term:'ASD',full:'Autism Spectrum Disorder',cat:'pediatrics',def:'A neurodevelopmental condition affecting communication, behavior, and social interaction. Diagnosed typically before age 3.',usage:'ASD evaluation completed. Diagnosis confirmed. Early intervention services ordered.',related:["Peds","ADHD","OT","PT"]},
-{term:'BMI',full:'Body Mass Index',cat:'pediatrics',def:'A calculation using height and weight to estimate body fat. In children, interpreted using age- and sex-specific growth charts.',usage:'BMI 31, obese range. Nutrition counseling and activity goals discussed.',related:["Peds","DM","HTN"]},
-{term:'DM',full:'Diabetes Mellitus',cat:'endo',def:'A metabolic disease characterized by high blood sugar levels due to insufficient insulin production or action. Type 1 is autoimmune; Type 2 is lifestyle-related.',usage:'DM Type 2 diagnosed. Starting metformin and lifestyle modifications.',related:["HbA1c","BMP","GDM"]},
-{term:'DM1',full:'Type 1 Diabetes Mellitus',cat:'endo',def:'An autoimmune condition where the body destroys insulin-producing cells in the pancreas. Requires lifelong insulin therapy.',usage:'DM1 since age 8. Currently on insulin pump therapy.',related:["DM","HbA1c"]},
-{term:'DM2',full:'Type 2 Diabetes Mellitus',cat:'endo',def:'The most common form of diabetes where the body does not use insulin effectively. Strongly associated with obesity and lifestyle.',usage:'DM2 with poor control. HbA1c 10.2%. Adding insulin to oral regimen.',related:["DM","HbA1c","BMI"]},
-{term:'Hypo',full:'Hypoglycemia',cat:'endo',def:'Abnormally low blood sugar, typically below 70 mg/dL. Causes shakiness, sweating, confusion, and can cause loss of consciousness.',usage:'Hypo episode at home. BG 48. Treated with orange juice. Now 112.',related:["DM","BMP"]},
-{term:'BG',full:'Blood Glucose',cat:'endo',def:'The concentration of sugar (glucose) in the blood. Fasting normal is 70-99 mg/dL. Used to monitor and manage diabetes.',usage:'Fasting BG 248, elevated. Insulin adjustment made.',related:["DM","HbA1c","BMP","Hypo"]},
-{term:'Hypo-T',full:'Hypothyroidism',cat:'endo',def:'An underactive thyroid that does not produce enough thyroid hormone. Causes fatigue, weight gain, cold intolerance, and constipation.',usage:'Hypothyroidism confirmed: TSH 8.4. Levothyroxine 50 mcg initiated.',related:["TSH","T4","mcg","QD"]},
-{term:'Hyper-T',full:'Hyperthyroidism',cat:'endo',def:'An overactive thyroid producing too much thyroid hormone. Causes weight loss, rapid heartbeat, anxiety, and heat intolerance.',usage:'Hyperthyroidism confirmed: TSH suppressed, T4 elevated. Endocrinology referral.',related:["TSH","T4","HR","EKG"]},
-{term:'T4',full:'Thyroxine',cat:'endo',def:'The main hormone produced by the thyroid gland. Free T4 is measured alongside TSH to evaluate thyroid function.',usage:'Free T4 low at 0.6 ng/dL. Consistent with hypothyroidism.',related:["TSH","Hypo-T"]},
-{term:'CKD',full:'Chronic Kidney Disease',cat:'nephrology',def:'Long-term progressive loss of kidney function, staged 1-5 based on eGFR. Stage 5 is kidney failure requiring dialysis or transplant.',usage:'CKD Stage 4. eGFR 22. Nephrology managing. Dialysis planning initiated.',related:["eGFR","Cr","BUN","AKI","HD"]},
-{term:'AKI',full:'Acute Kidney Injury',cat:'nephrology',def:'A sudden episode of kidney failure or damage happening within hours or days. Causes a rapid rise in creatinine and BUN.',usage:'AKI suspected. Cr rose from 1.0 to 2.8 in 24 hours. Nephrology consult.',related:["Cr","BUN","eGFR","CKD"]},
-{term:'HD',full:'Hemodialysis',cat:'nephrology',def:'A treatment filtering waste products and excess fluid from the blood when the kidneys can no longer do so. Typically done 3 times per week.',usage:'HD initiated for ESRD. AV fistula placed. Sessions Monday Wednesday Friday.',related:["CKD","ESRD","AKI"]},
-{term:'ESRD',full:'End-Stage Renal Disease',cat:'nephrology',def:'The final stage of chronic kidney disease where the kidneys can no longer function on their own. Requires dialysis or transplant.',usage:'ESRD on HD x 2 years. Listed for kidney transplant.',related:["CKD","HD","eGFR","Cr"]},
-{term:'UTI',full:'Urinary Tract Infection',cat:'nephrology',def:'A bacterial infection in any part of the urinary system. Causes burning, frequency, and urgency with urination.',usage:'UTI confirmed on UA. E. coli. Starting nitrofurantoin x 5 days.',related:["UA","WBC","Cr"]},
-{term:'UA',full:'Urinalysis',cat:'nephrology',def:'A test examining the physical, chemical, and microscopic properties of urine. Used to detect UTIs, kidney disease, and diabetes.',usage:'UA: WBC 50, bacteria present, nitrite positive. Consistent with UTI.',related:["UTI","Cr","BUN","WBC"]},
-{term:'Pyelo',full:'Pyelonephritis',cat:'nephrology',def:'A kidney infection, usually from bacteria spreading from the bladder. Causes fever, flank pain, and nausea. Requires antibiotics.',usage:'Pyelo diagnosed. Fever, CVA tenderness, UA with bacteria. IV antibiotics started.',related:["UTI","UA","WBC","Cr"]},
-{term:'Derm',full:'Dermatology',cat:'dermatology',def:'The medical specialty focused on the skin, hair, and nails. Treats conditions from acne and eczema to skin cancers.',usage:'Derm referral placed for evaluation of suspicious pigmented lesion.',related:["Bx","CA","Melanoma"]},
-{term:'SCC',full:'Squamous Cell Carcinoma',cat:'dermatology',def:'The second most common type of skin cancer, arising from squamous cells in the outer layer of skin. Usually caused by UV exposure.',usage:'SCC confirmed on punch Bx. Mohs surgery scheduled.',related:["BCC","Melanoma","Bx","XRT"]},
-{term:'BCC',full:'Basal Cell Carcinoma',cat:'dermatology',def:'The most common type of skin cancer. Grows slowly and rarely spreads, but needs treatment to prevent local tissue destruction.',usage:'BCC on left cheek. Excision with clear margins.',related:["SCC","Melanoma","Bx","Derm"]},
-{term:'Melanoma',full:'Melanoma',cat:'dermatology',def:'The most dangerous form of skin cancer arising from pigment-producing cells. Can spread rapidly if not caught early.',usage:'Melanoma confirmed. Breslow depth 1.8mm. Wide excision and sentinel node Bx.',related:["SCC","BCC","Bx","Mets"]},
-{term:'Eczema',full:'Atopic Dermatitis',cat:'dermatology',def:'A chronic inflammatory skin condition causing itchy, red, dry, and cracked skin. Often associated with allergies and asthma.',usage:'Eczema flare on bilateral arms. Triamcinolone 0.1% cream BID x 2 weeks.',related:["Derm"]},
-{term:'ABCDE',full:'Asymmetry Border Color Diameter Evolution',cat:'dermatology',def:'A warning sign checklist for melanoma: Asymmetry, irregular Border, multiple Colors, Diameter over 6mm, and Evolution (change over time).',usage:'Mole with ABCDE features noted. Punch biopsy ordered.',related:["Melanoma","Bx","Derm"]},
-{term:'ADL',full:'Activities of Daily Living',cat:'rehab',def:'Basic self-care tasks a person performs each day including bathing, dressing, eating, grooming, and toileting. Used to assess functional independence.',usage:'Patient requires assistance with 3 of 6 ADLs. OT initiated.',related:["OT","PT","ROM"]},
-{term:'AROM',full:'Active Range of Motion',cat:'rehab',def:'The range of movement a patient can achieve using their own muscle strength, without assistance.',usage:'AROM of right shoulder: flexion 90 degrees, abduction 75 degrees. Limited. PT initiated.',related:["PROM","ROM","PT"]},
-{term:'PROM',full:'Passive Range of Motion',cat:'rehab',def:'The range of movement achieved when an external force moves the joint without the patient\'s muscle effort.',usage:'PROM maintained while patient is non-weight-bearing post-op.',related:["AROM","ROM","PT"]},
-{term:'TENS',full:'Transcutaneous Electrical Nerve Stimulation',cat:'rehab',def:'A therapy using low-voltage electrical currents to relieve pain by stimulating nerve fibers. Applied via electrodes on the skin.',usage:'TENS unit applied to lumbar region for LBP management.',related:["PT","LBP","ROM"]},
-{term:'HEP',full:'Home Exercise Program',cat:'rehab',def:'A personalized set of exercises prescribed by a physical or occupational therapist for the patient to perform at home between sessions.',usage:'HEP provided: 3 exercises, 2x daily. Follow-up in 2 weeks.',related:["PT","OT","ROM","ADL"]},
-{term:'WB',full:'Weight Bearing',cat:'rehab',def:'Putting weight on an injured limb. Documented as WBAT (as tolerated), PWB (partial), NWB (none), or FWB (full).',usage:'Post-op orders: PWB right leg with crutches x 6 weeks.',related:["PT","Fx","TKA","THA","ROM"]},
-];
-
-const LAB_RANGES={"WBC": {"low": 4.5, "high": 11.0, "unit": "K/uL", "dmin": 0, "dmax": 20, "low_tip": "A low WBC (leukopenia) may indicate a viral infection, bone marrow problem, autoimmune disease, or side effects from chemotherapy. Your doctor may order additional tests to find the cause.", "high_tip": "A high WBC (leukocytosis) is often a sign of infection, inflammation, or stress on the body. It can also be caused by certain medications or, rarely, blood disorders like leukemia."}, "Hgb": {"low": 11.5, "high": 17.5, "unit": "g/dL", "dmin": 4, "dmax": 22, "low_tip": "Low hemoglobin indicates anemia. Common causes include iron deficiency, vitamin B12 or folate deficiency, chronic disease, or blood loss. Symptoms include fatigue, pallor, and shortness of breath.", "high_tip": "High hemoglobin can indicate dehydration, living at high altitude, smoking, or a condition called polycythemia vera. Your doctor will review in context of your symptoms."}, "Hct": {"low": 36, "high": 50, "unit": "%", "dmin": 15, "dmax": 65, "low_tip": "Low hematocrit indicates anemia. Your blood has fewer red blood cells than normal, which can cause fatigue, weakness, and difficulty breathing with exertion.", "high_tip": "High hematocrit means your blood is thicker than normal. This can be caused by dehydration or a bone marrow disorder, and may increase the risk of blood clots."}, "Plt": {"low": 150, "high": 400, "unit": "K/uL", "dmin": 0, "dmax": 700, "low_tip": "Low platelets (thrombocytopenia) increase your risk of bleeding and bruising. Causes include certain medications, viral infections, or autoimmune conditions. Very low levels may require treatment.", "high_tip": "High platelets (thrombocytosis) can occur after an infection, surgery, or iron deficiency. In some cases it may reflect a bone marrow condition. Your doctor will assess the cause."}, "Na": {"low": 135, "high": 145, "unit": "mEq/L", "dmin": 120, "dmax": 160, "low_tip": "Low sodium (hyponatremia) can cause nausea, headache, confusion, and in severe cases, seizures. Common causes include drinking too much water, heart failure, kidney disease, or certain medications.", "high_tip": "High sodium (hypernatremia) usually means dehydration. It can cause thirst, confusion, and in severe cases, dangerous brain effects. Increasing fluid intake is usually the first step."}, "K": {"low": 3.5, "high": 5.0, "unit": "mEq/L", "dmin": 2.0, "dmax": 7.0, "low_tip": "Low potassium (hypokalemia) can cause muscle weakness, cramps, fatigue, and dangerous heart rhythm problems. It is commonly caused by diuretics, vomiting, or diarrhea.", "high_tip": "High potassium (hyperkalemia) can be life-threatening, causing dangerous heart rhythms. Common causes include kidney disease, certain medications, and excessive potassium intake."}, "BUN": {"low": 7, "high": 20, "unit": "mg/dL", "dmin": 0, "dmax": 60, "low_tip": "Low BUN is usually not concerning. It can be seen with low protein intake, liver disease, or overhydration.", "high_tip": "High BUN suggests the kidneys may not be filtering waste effectively, or you may be dehydrated. It can also rise with a high protein diet or GI bleeding. Usually interpreted alongside creatinine."}, "Cr": {"low": 0.6, "high": 1.2, "unit": "mg/dL", "dmin": 0, "dmax": 6, "low_tip": "Low creatinine is usually not concerning and often reflects low muscle mass.", "high_tip": "High creatinine indicates the kidneys are not filtering waste effectively. It can be caused by dehydration, kidney disease, or certain medications. A rising trend over time is more concerning than a single elevated value."}, "eGFR": {"low": 60, "high": 120, "unit": "mL/min", "dmin": 0, "dmax": 130, "low_tip": "An eGFR below 60 indicates chronic kidney disease (CKD). The lower the number, the less kidney function remains. Below 15 typically requires dialysis or a kidney transplant.", "high_tip": "A high eGFR is generally reassuring and indicates good kidney filtration. Values over 90 are considered normal."}, "LDL": {"low": 0, "high": 100, "unit": "mg/dL", "dmin": 0, "dmax": 250, "low_tip": "Low LDL is generally very good for cardiovascular health. Very low levels under 40 are rare and may warrant evaluation.", "high_tip": "High LDL (bad cholesterol) increases the risk of plaque buildup in arteries, leading to heart attack and stroke. Lifestyle changes and statin medications are the primary treatments."}, "HDL": {"low": 40, "high": 100, "unit": "mg/dL", "dmin": 0, "dmax": 120, "low_tip": "Low HDL (good cholesterol) increases cardiovascular risk. Exercise, quitting smoking, and a healthy diet can help raise HDL levels.", "high_tip": "High HDL is generally protective against heart disease. Very high levels over 100 are uncommon and may occasionally be associated with certain rare conditions."}, "TG": {"low": 0, "high": 150, "unit": "mg/dL", "dmin": 0, "dmax": 500, "low_tip": "Low triglycerides are generally not a concern.", "high_tip": "High triglycerides increase cardiovascular risk and at very high levels over 500 can cause pancreatitis. Reducing sugar, refined carbs, and alcohol are key lifestyle changes."}, "TSH": {"low": 0.4, "high": 4.0, "unit": "mIU/L", "dmin": 0, "dmax": 10, "low_tip": "A low TSH usually means your thyroid is overactive (hyperthyroidism). Symptoms include weight loss, rapid heartbeat, anxiety, and heat intolerance.", "high_tip": "A high TSH usually means your thyroid is underactive (hypothyroidism). Symptoms include fatigue, weight gain, cold intolerance, and constipation. Levothyroxine is the standard treatment."}, "HbA1c": {"low": 4.0, "high": 5.7, "unit": "%", "dmin": 4, "dmax": 14, "low_tip": "A low HbA1c below 4% is rare and may indicate a blood disorder or hypoglycemia. Discuss with your doctor.", "high_tip": "5.7-6.4% indicates prediabetes. 6.5% or above indicates diabetes. Higher values mean blood sugar has been poorly controlled over the past 2-3 months. Each 1% reduction significantly lowers the risk of complications."}, "INR": {"low": 0.8, "high": 1.1, "unit": "ratio", "dmin": 0, "dmax": 5, "low_tip": "A low INR means your blood clots normally or faster than normal. If you are on warfarin, this means your dose may be too low and you may be at risk for a clot.", "high_tip": "A high INR means your blood takes longer to clot, increasing bleeding risk. If you are on warfarin, the therapeutic range is usually 2.0-3.0. Above 3.5 significantly increases bleeding risk."}, "BG": {"low": 70, "high": 99, "unit": "mg/dL fasting", "dmin": 40, "dmax": 350, "low_tip": "Blood glucose below 70 mg/dL is hypoglycemia. Symptoms include shakiness, sweating, confusion, and fainting. Treat immediately with fast-acting sugar such as juice or glucose tablets.", "high_tip": "100-125 mg/dL fasting indicates prediabetes. 126 mg/dL or above on two occasions indicates diabetes. High blood sugar over time damages blood vessels, nerves, kidneys, and eyes."}, "PSA": {"low": 0, "high": 4.0, "unit": "ng/mL", "dmin": 0, "dmax": 20, "low_tip": "A low PSA is reassuring and suggests a lower likelihood of prostate cancer.", "high_tip": "A PSA above 4.0 ng/mL may warrant further evaluation, but elevated PSA can also be caused by a benign enlarged prostate or prostate inflammation. Your doctor will interpret this in context of your age and risk factors."}, "CRP": {"low": 0, "high": 1.0, "unit": "mg/L", "dmin": 0, "dmax": 15, "low_tip": "A low CRP is reassuring and indicates little to no active inflammation in the body.", "high_tip": "1-3 mg/L indicates moderate cardiovascular risk. Above 3 mg/L indicates high cardiovascular risk or significant active inflammation. Very high levels above 10 may indicate infection or autoimmune disease."}, "ESR": {"low": 0, "high": 20, "unit": "mm/hr", "dmin": 0, "dmax": 80, "low_tip": "A low ESR is normal and indicates no significant inflammation.", "high_tip": "An elevated ESR indicates inflammation somewhere in the body. It is a non-specific test and a high result prompts further investigation to find the cause, which can range from infection to autoimmune disease to cancer."}, "PT": {"low": 11, "high": 13.5, "unit": "seconds", "dmin": 5, "dmax": 40, "low_tip": "A low PT means your blood clots faster than normal. This is usually not a concern unless you are on blood thinners.", "high_tip": "An elevated PT means it takes longer for your blood to clot. This can indicate liver disease, vitamin K deficiency, or the effect of warfarin. Interpreted alongside INR."}};
-
-const CATS=[
-  {id:"all",label:"All"},{id:"general",label:"General"},{id:"pharmacy",label:"Pharmacy"},
-  {id:"cardiology",label:"Cardiology"},{id:"labs",label:"Labs"},{id:"emergency",label:"Emergency"},
-  {id:"neurology",label:"Neurology"},{id:"pulmonary",label:"Pulmonary"},{id:"surgical",label:"Surgical"},
-  {id:"orthopedics",label:"Orthopedics"},{id:"gastro",label:"Gastro"},{id:"oncology",label:"Oncology"},
-  {id:"obgyn",label:"OB/GYN"},{id:"psych",label:"Psychiatry"},{id:"pediatrics",label:"Pediatrics"},
-  {id:"endo",label:"Endocrinology"},{id:"nephrology",label:"Nephrology"},{id:"dermatology",label:"Dermatology"},
-  {id:"rehab",label:"Rehab/PT"},{id:"billing",label:"Billing"}
-];
-
-let state={view:"home",query:"",cat:"all",term:null};
-
-function navigate(view,arg){
-  state.view=view;
-  if(view==="detail"){state.term=arg;window.scrollTo(0,0);}
-  if(view==="home"){state.term=null;}
-  render();updateNav();
-}
-function updateNav(){
-  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("on"));
-  const map={home:"nav-home",converter:"nav-converter"};
-  if(map[state.view])document.getElementById(map[state.view])?.classList.add("on");
-}
-function search(q){
-  q=q.toLowerCase().trim();
-  if(!q)return DATA;
-  return DATA.filter(d=>d.term.toLowerCase().includes(q)||d.full.toLowerCase().includes(q)||d.def.toLowerCase().includes(q));
-}
-function filterByCat(arr,cat){if(cat==="all")return arr;return arr.filter(d=>d.cat===cat);}
-function catLabel(id){return CATS.find(c=>c.id===id)?.label||id;}
-
-function renderCard(d){
-  return`<div class="acard" onclick="navigate('detail','${d.term}')">
-    <div class="aterm">${d.term}</div>
-    <div class="afull">${d.full}</div>
-    <div class="adef">${d.def}</div>
-    <div class="atag">${catLabel(d.cat)}</div>
-  </div>`;
-}
-function adBanner(){
-  return`<div class="ad-block"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-6197205248872945" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>`;
-}
-function adSidebar(){
-  return`<div class="ad-block" style="margin-bottom:1rem"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-6197205248872945" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>`;
-}
-function renderSidebar(){
-  const popular=["PRN","SOB","NPO","DNR","BID","CBC","EOB","IV","INR","HbA1c","LMP","MDD","CKD","TKA","GERD"].map(t=>DATA.find(d=>d.term===t)).filter(Boolean);
-  return`<div class="sidebar">
-    ${adSidebar()}
-    <div class="sidebar-section">
-      <h4>Popular Lookups</h4>
-      <ul class="sidebar-list">
-        ${popular.map(d=>`<li onclick="navigate('detail','${d.term}')"><span class="sl-term">${d.term}</span><span class="sl-full">${d.full}</span></li>`).join("")}
-      </ul>
-    </div>
-  </div>`;
-}
-function renderHome(){
-  const results=filterByCat(search(state.query),state.cat);
-  const chips=CATS.map(c=>`<button class="chip ${state.cat===c.id?"on":""}" onclick="setCat('${c.id}')">${c.label}</button>`).join("");
-  return`
-  <div class="hero">
-    <h1>Decode your <em>medical chart</em> &amp; lab results in plain English</h1>
-    <p>Look up any medical abbreviation &mdash; plus check if your lab values are normal. Free for patients, caregivers, and students.</p>
-    <div class="search-wrap">
-      <input id="main-search" type="text" placeholder="Type SOB, PRN, CBC, LMP&hellip;" autocomplete="off" value="${state.query}" oninput="onSearch(this.value)" onkeydown="handleKey(event)" aria-label="Search medical abbreviations">
-      <div class="search-icon">&#128269;</div>
-      <div class="dropdown" id="dropdown"></div>
-    </div>
+  <p>&copy; 2025 HomeMaterialsCalculator.com</p>
+  <div class="footer-links">
+    <a href="concrete-calculator.html">Concrete</a>
+    <a href="mulch-calculator.html">Mulch</a>
+    <a href="gravel-calculator.html">Gravel</a>
+    <a href="topsoil-calculator.html">Topsoil</a>
+    <a href="lumber-calculator.html">Lumber</a>
+    <a href="paint-calculator.html">Paint</a>
+    <a href="flooring-calculator.html">Flooring</a>
   </div>
-  <div style="background:var(--teal-l);border-bottom:1px solid #A7DED0;padding:.6rem 1rem;text-align:center;font-size:13px;color:var(--teal-d);font-weight:500">
-  &#10003; 238 Medical Abbreviations &nbsp;&nbsp;|&nbsp;&nbsp; &#10003; Lab Value Checker with Normal Ranges &nbsp;&nbsp;|&nbsp;&nbsp; &#10003; Unit Converter &nbsp;&nbsp;|&nbsp;&nbsp; &#10003; Free &amp; Ad-Supported
-</div>
-<div style="background:#fff;border-bottom:1px solid var(--border);padding:.6rem 1rem;text-align:center;font-size:13px;color:var(--muted)">
-  &#128270; Search any term below &mdash; lab tests like <strong>WBC</strong>, <strong>HbA1c</strong>, or <strong>TSH</strong> include an interactive value checker where you can enter your result and see if it is normal.
-</div>
-<div class="catbar"><div class="catbar-inner"><span class="cat-lbl">Category:</span>${chips}</div></div>
-  <div class="wrap">
-    <div class="two-col">
-      <div>
-        ${adBanner()}
-        <div class="results-hdr"><span class="count">${results.length} abbreviation${results.length!==1?"s":""} found</span></div>
-        ${results.length?`<div class="grid">${results.map(renderCard).join("")}</div>`:"<div class='empty'><h3>No results found</h3><p>Try a different search term</p></div>"}
-        ${results.length>8?adBanner():""}
-      </div>
-      ${renderSidebar()}
-    </div>
-  </div>`;
-}
+</footer>
 
-function renderLabRange(term){
-  var r=LAB_RANGES[term];
-  if(!r)return "";
-  var nl=(r.low===0)?"0\u20130"+r.high:r.low+"\u2013"+r.high;
-  var out="";
-  out+='<div class="d-sec" style="margin-top:.5rem">';
-  out+='<h3>Check Your Result</h3>';
-  out+='<div class="lab-range-widget">';
-  out+='<div class="lrw-input-row">';
-  out+='<input type="number" class="lrw-input" data-term="TERMTOKEN" placeholder="Enter your value from your lab report..." step="any" style="flex:1;height:44px;border:1px solid var(--border);border-radius:var(--radius-sm);padding:0 14px;font-size:15px;font-family:inherit;outline:none;color:var(--text);background:#fff">';
-  out+='<span class="lrw-unit">'+r.unit+'</span>';
-  out+='</div>';
-  out+='<div class="lrw-bar">';
-  out+='<div class="lrw-zone-low"></div>';
-  out+='<div class="lrw-zone-normal"></div>';
-  out+='<div class="lrw-zone-high"></div>';
-  out+='<div class="lrw-needle" id="lrw-needle-TERMTOKEN" style="display:none"></div>';
-  out+='</div>';
-  out+='<div class="lrw-labels">';
-  out+='<span>'+r.dmin+'</span>';
-  out+='<span class="lrw-label-low">Low &lt;'+r.low+'</span>';
-  out+='<span class="lrw-label-normal">Normal: '+nl+'</span>';
-  out+='<span class="lrw-label-high">High &gt;'+r.high+'</span>';
-  out+='<span>'+r.dmax+'</span>';
-  out+='</div>';
-  out+='<div class="lrw-result" id="lrw-result-TERMTOKEN" style="display:none"></div>';
-  out+='</div></div>';
-  out=out.split("TERMTOKEN").join(term);
-  return out;
-}
-
-function updateLabGauge(el,term){
-  var r=LAB_RANGES[term];
-  if(!r)return;
-  var val=parseFloat(el.value);
-  var needle=document.getElementById("lrw-needle-"+term);
-  var result=document.getElementById("lrw-result-"+term);
-  if(!needle||!result||isNaN(val)){
-    if(needle)needle.style.display="none";
-    if(result)result.style.display="none";
-    return;
-  }
-  var pct=Math.max(0,Math.min(100,((val-r.dmin)/(r.dmax-r.dmin))*100));
-  needle.style.display="block";
-  needle.style.left=pct+"%";
-  result.style.display="block";
-  var status,color,tip,bg,icon;
-  if(val<r.low){
-    status="Below Normal Range";color="#DC2626";bg="#FEF2F2";tip=r.low_tip;icon="&#9660;";
-  } else if(val>r.high){
-    status="Above Normal Range";color="#DC2626";bg="#FEF2F2";tip=r.high_tip;icon="&#9650;";
-  } else {
-    status="Within Normal Range";color="#059669";bg="#F0FDF4";icon="&#10003;";
-    tip="Your value falls within the standard reference range for this test. Lab reference ranges can vary slightly between laboratories and individual patient factors always matter. Discuss all results with your healthcare provider.";
-  }
-  needle.style.background=color;
-  result.style.background=bg;
-  result.style.borderColor=color+"55";
-  result.innerHTML="<div class='lrw-status' style='color:"+color+"'>"+icon+" "+status+"&nbsp;&nbsp;<span style='font-size:17px;font-weight:700'>"+val+" "+r.unit+"</span></div><div class='lrw-tip'>"+tip+"</div>";
-}
-
-document.addEventListener("input",function(e){
-  if(e.target.classList.contains("lrw-input")){
-    updateLabGauge(e.target,e.target.getAttribute("data-term"));
-  }
-});
-
-
-function renderDetail(){
-  var d=DATA.find(function(x){return x.term===state.term;});
-  if(!d){
-    return '<div class="wrap"><button class="back-btn" onclick="navigate(\'home\')">&#8592; Back</button><p>Not found.</p></div>';
-  }
-  var relChips="";
-  (d.related||[]).forEach(function(r){
-    relChips+='<button class="rel-chip" onclick="navigate(\'detail\',\''+r+'\')">'+r+'</button>';
-  });
-  var labWidget=LAB_RANGES[d.term]?renderLabRange(d.term):"";
-  var relSection="";
-  if(relChips){
-    relSection='<hr class="divider"><div class="d-sec"><h3>Related Abbreviations</h3><div class="rel-chips">'+relChips+'</div></div>';
-  }
-  var out="";
-  out+='<div class="wrap"><div class="two-col"><div>';
-  out+='<button class="back-btn" onclick="navigate(\'home\')">&#8592; Back to Search</button>';
-  out+='<div class="detail-card">';
-  out+='<div class="d-term">'+d.term+'</div>';
-  out+='<div class="d-full">'+d.full+'</div>';
-  out+='<div class="d-tag">'+catLabel(d.cat)+'</div>';
-  out+='<div class="d-sec"><h3>Plain-English Definition</h3><p>'+d.def+'</p></div>';
-  out+='<div class="d-sec"><h3>Example Usage in a Chart</h3><div class="usage-block">'+d.usage+'</div></div>';
-  out+=labWidget;
-  out+=relSection;
-  out+='<div class="disclaimer"><span>&#9888;&#65039;</span><span><strong>Educational reference only.</strong> Medical abbreviations can have multiple meanings depending on context. Normal ranges can vary by laboratory and individual patient factors. Always confirm with your healthcare provider.</span></div>';
-  out+='</div>';
-  out+=adBanner();
-  out+='</div>';
-  out+=renderSidebar();
-  out+='</div></div>';
-  return out;
-}
-
-
-function render(){
-  const app=document.getElementById("app");
-  if(state.view==="home")app.innerHTML=renderHome();
-  else if(state.view==="detail")app.innerHTML=renderDetail();
-  else if(state.view==="converter")app.innerHTML=renderConverter();
-  if(state.view==="converter"){convertWeight();convertVol();convTemp("f");calcDose();}
-  if(state.view==="home"&&state.query)updateDropdown(state.query);
-}
-function onSearch(q){
-  state.query=q;
-  const results=filterByCat(search(q),state.cat);
-  const count=document.querySelector(".count");
-  const grid=document.querySelector(".grid");
-  if(count)count.textContent=`${results.length} abbreviation${results.length!==1?"s":""} found`;
-  if(grid)grid.innerHTML=results.map(renderCard).join("");
-  updateDropdown(q);
-}
-function updateDropdown(q){
-  const dd=document.getElementById("dropdown");
-  if(!dd)return;
-  if(!q||q.length<1){dd.classList.remove("vis");return;}
-  const hits=DATA.filter(d=>d.term.toLowerCase().startsWith(q.toLowerCase())||d.full.toLowerCase().includes(q.toLowerCase())).slice(0,8);
-  if(!hits.length){dd.classList.remove("vis");return;}
-  dd.innerHTML=hits.map(d=>`<div class="ditem" onclick="navigate('detail','${d.term}')"><span class="dt">${d.term}</span><span class="df">${d.full}</span><span class="dc">${catLabel(d.cat)}</span></div>`).join("");
-  dd.classList.add("vis");
-}
-function handleKey(e){
-  if(e.key==="Escape")document.getElementById("dropdown")?.classList.remove("vis");
-  if(e.key==="Enter"){
-    const q=e.target.value.trim().toUpperCase();
-    const match=DATA.find(d=>d.term===q);
-    if(match)navigate("detail",match.term);
-    else document.getElementById("dropdown")?.classList.remove("vis");
-  }
-}
-document.addEventListener("click",e=>{if(!e.target.closest(".search-wrap"))document.getElementById("dropdown")?.classList.remove("vis");});
-function setCat(cat){state.cat=cat;render();}
-function fmt(n){return parseFloat(n.toPrecision(6)).toLocaleString();}
-function convertWeight(){
-  const val=parseFloat(document.getElementById("wt-val")?.value)||0;
-  const from=document.getElementById("wt-from")?.value;
-  let mg=val;
-  if(from==="mcg")mg=val/1000;
-  if(from==="g")mg=val*1000;
-  const el=document.getElementById("wt-result");
-  if(el)el.innerHTML=`${fmt(mg)} mg = ${fmt(mg*1000)} mcg = ${fmt(mg/1000)} g`;
-}
-function convertVol(){
-  const val=parseFloat(document.getElementById("vol-val")?.value)||0;
-  const from=document.getElementById("vol-from")?.value;
-  let mL=val;
-  if(from==="tsp")mL=val*4.92892;
-  if(from==="tbsp")mL=val*14.7868;
-  if(from==="oz")mL=val*29.5735;
-  const el=document.getElementById("vol-result");
-  if(el)el.innerHTML=`${fmt(mL)} mL = ${fmt(mL/4.929)} tsp = ${fmt(mL/14.787)} tbsp = ${fmt(mL/29.574)} fl oz`;
-}
-function convTemp(dir){
-  if(dir==="f"){const f=parseFloat(document.getElementById("tf")?.value)||0;const c=(f-32)*5/9;const el=document.getElementById("tc");if(el)el.value=c.toFixed(1);}
-  else{const c=parseFloat(document.getElementById("tc")?.value)||0;const f=c*9/5+32;const el=document.getElementById("tf");if(el)el.value=f.toFixed(1);}
-}
-function calcDose(){
-  const d=parseFloat(document.getElementById("dose-per-kg")?.value)||0;
-  let w=parseFloat(document.getElementById("pt-weight")?.value)||0;
-  const u=document.getElementById("wt-unit")?.value;
-  if(u==="lb")w=w*0.453592;
-  const total=d*w;
-  const el=document.getElementById("dose-result");
-  if(el)el.textContent=`Total dose: ${fmt(total)} mg  (${fmt(w)} kg x ${fmt(d)} mg/kg)`;
-}
-render();
-</script>
 </body>
 </html>
